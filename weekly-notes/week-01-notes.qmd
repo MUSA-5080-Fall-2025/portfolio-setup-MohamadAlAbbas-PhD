@@ -4,7 +4,7 @@ date: "2025-09-08"
 ---
 
 ## Key Concepts Learned
-- Basics of tidyverse and its accompanying commands
+<!-- [Concepts & Not codes] -->
 - Setting up repositories on
 
 ## Coding Techniques
@@ -12,12 +12,14 @@ date: "2025-09-08"
 - Quarto functions on how to **bold**, *italics*, ***both bold and italics***, `code list`, and ~~strikethrough~~ 
 
 ## Questions & Challenges
-- [What I didn't fully understand]
-- [Areas needing more practice]
+<!-- [What I didn't fully understand]] -->
+<!-- [Areas needing more practice] -->
+- Everything was clear. I would still like to mess around more with Quarto.
 
 ## Connections to Policy
-- [How this week's content applies to real policy work]
+<!-- [How this week's content applies to real policy work] -->
+- This was a building block week, so not much of direct application rather tracking and documentation baseline for setup. 
 
 ## Reflection
-- [What was most interesting]
-- [How I'll apply this knowledge]
+- Learning how to create a custom repository was both enjoyable and insightful.
+- It could also serve as a way to share supplementary analyses and to present code in a more public, graphical, and accessible format for non-coding audiences.
