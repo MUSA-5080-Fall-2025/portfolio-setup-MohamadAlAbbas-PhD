@@ -4,12 +4,12 @@ date: "2025-09-08"
 ---
 
 ## Key Concepts Learned
-- [List main concepts from lecture]
-- [Technical skills covered]
+- Basics of tidyverse and its accompanying commands
+- Setting up repositories on
 
 ## Coding Techniques
-- [New R functions or approaches]
-- [Quarto features learned]
+- Basics of tidyverse and its accompanying commands of filter(), select(), mutate(), and summarize()
+- Quarto functions on how to **bold**, *italics*, ***both bold and italics***, `code list`, and ~~strikethrough~~ 
 
 ## Questions & Challenges
 - [What I didn't fully understand]
