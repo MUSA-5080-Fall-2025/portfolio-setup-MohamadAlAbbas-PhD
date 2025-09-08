@@ -1,0 +1,25 @@
+---
+title: "Week 1 Notes - Course Introduction"
+date: "2025-09-08"
+---
+
+## Key Concepts Learned
+<!-- [Concepts & Not codes] -->
+- Setting up repositories on
+
+## Coding Techniques
+- Basics of tidyverse and its accompanying commands of filter(), select(), mutate(), and summarize()
+- Quarto functions on how to **bold**, *italics*, ***both bold and italics***, `code list`, and ~~strikethrough~~ 
+
+## Questions & Challenges
+<!-- [What I didn't fully understand]] -->
+<!-- [Areas needing more practice] -->
+- Everything was clear. I would still like to mess around more with Quarto.
+
+## Connections to Policy
+<!-- [How this week's content applies to real policy work] -->
+- This was a building block week, so not much of direct application rather tracking and documentation baseline for setup. 
+
+## Reflection
+- Learning how to create a custom repository was both enjoyable and insightful.
+- It could also serve as a way to share supplementary analyses and to present code in a more public, graphical, and accessible format for non-coding audiences.
