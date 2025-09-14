@@ -8,10 +8,19 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - text: About
+        menu: 
+          - href: cv.qmd 
+            text: Curriculum Vitae
+          - href: Publications.qmd
+            text: Publications
       - text: Weekly Notes
         menu: 
           - href: weekly-notes/week-01-notes.qmd
             text: Week 1
+          - href: weekly-notes/week-02-notes.qmd
+            text: Week 2
+          
 format:
   html:
     theme: cosmo

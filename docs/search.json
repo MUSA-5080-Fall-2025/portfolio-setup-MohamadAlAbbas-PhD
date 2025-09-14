@@ -1,5 +1,89 @@
 [
   {
+    "objectID": "weekly-notes/week-05-notes.html",
+    "href": "weekly-notes/week-05-notes.html",
+    "title": "Week 1 Notes - Course Introduction",
+    "section": "",
+    "text": "Setting up repositories on"
+  },
+  {
+    "objectID": "weekly-notes/week-05-notes.html#key-concepts-learned",
+    "href": "weekly-notes/week-05-notes.html#key-concepts-learned",
+    "title": "Week 1 Notes - Course Introduction",
+    "section": "",
+    "text": "Setting up repositories on"
+  },
+  {
+    "objectID": "weekly-notes/week-05-notes.html#coding-techniques",
+    "href": "weekly-notes/week-05-notes.html#coding-techniques",
+    "title": "Week 1 Notes - Course Introduction",
+    "section": "Coding Techniques",
+    "text": "Coding Techniques\n\nBasics of tidyverse and its accompanying commands of filter(), select(), mutate(), and summarize()\nQuarto functions on how to bold, italics, both bold and italics, code list, and strikethrough"
+  },
+  {
+    "objectID": "weekly-notes/week-05-notes.html#questions-challenges",
+    "href": "weekly-notes/week-05-notes.html#questions-challenges",
+    "title": "Week 1 Notes - Course Introduction",
+    "section": "Questions & Challenges",
+    "text": "Questions & Challenges\n\n\n\nEverything was clear. I would still like to mess around more with Quarto."
+  },
+  {
+    "objectID": "weekly-notes/week-05-notes.html#connections-to-policy",
+    "href": "weekly-notes/week-05-notes.html#connections-to-policy",
+    "title": "Week 1 Notes - Course Introduction",
+    "section": "Connections to Policy",
+    "text": "Connections to Policy\n\n\nThis was a building block week, so not much of direct application rather tracking and documentation baseline for setup."
+  },
+  {
+    "objectID": "weekly-notes/week-05-notes.html#reflection",
+    "href": "weekly-notes/week-05-notes.html#reflection",
+    "title": "Week 1 Notes - Course Introduction",
+    "section": "Reflection",
+    "text": "Reflection\n\nLearning how to create a custom repository was both enjoyable and insightful.\nIt could also serve as a way to share supplementary analyses and to present code in a more public, graphical, and accessible format for non-coding audiences."
+  },
+  {
+    "objectID": "weekly-notes/week-03-notes.html",
+    "href": "weekly-notes/week-03-notes.html",
+    "title": "Week 1 Notes - Course Introduction",
+    "section": "",
+    "text": "Setting up repositories on"
+  },
+  {
+    "objectID": "weekly-notes/week-03-notes.html#key-concepts-learned",
+    "href": "weekly-notes/week-03-notes.html#key-concepts-learned",
+    "title": "Week 1 Notes - Course Introduction",
+    "section": "",
+    "text": "Setting up repositories on"
+  },
+  {
+    "objectID": "weekly-notes/week-03-notes.html#coding-techniques",
+    "href": "weekly-notes/week-03-notes.html#coding-techniques",
+    "title": "Week 1 Notes - Course Introduction",
+    "section": "Coding Techniques",
+    "text": "Coding Techniques\n\nBasics of tidyverse and its accompanying commands of filter(), select(), mutate(), and summarize()\nQuarto functions on how to bold, italics, both bold and italics, code list, and strikethrough"
+  },
+  {
+    "objectID": "weekly-notes/week-03-notes.html#questions-challenges",
+    "href": "weekly-notes/week-03-notes.html#questions-challenges",
+    "title": "Week 1 Notes - Course Introduction",
+    "section": "Questions & Challenges",
+    "text": "Questions & Challenges\n\n\n\nEverything was clear. I would still like to mess around more with Quarto."
+  },
+  {
+    "objectID": "weekly-notes/week-03-notes.html#connections-to-policy",
+    "href": "weekly-notes/week-03-notes.html#connections-to-policy",
+    "title": "Week 1 Notes - Course Introduction",
+    "section": "Connections to Policy",
+    "text": "Connections to Policy\n\n\nThis was a building block week, so not much of direct application rather tracking and documentation baseline for setup."
+  },
+  {
+    "objectID": "weekly-notes/week-03-notes.html#reflection",
+    "href": "weekly-notes/week-03-notes.html#reflection",
+    "title": "Week 1 Notes - Course Introduction",
+    "section": "Reflection",
+    "text": "Reflection\n\nLearning how to create a custom repository was both enjoyable and insightful.\nIt could also serve as a way to share supplementary analyses and to present code in a more public, graphical, and accessible format for non-coding audiences."
+  },
+  {
     "objectID": "weekly-notes/week-01-notes.html",
     "href": "weekly-notes/week-01-notes.html",
     "title": "Week 1 Notes - Course Introduction",
@@ -40,48 +124,6 @@
     "title": "Week 1 Notes - Course Introduction",
     "section": "Reflection",
     "text": "Reflection\n\nLearning how to create a custom repository was both enjoyable and insightful.\nIt could also serve as a way to share supplementary analyses and to present code in a more public, graphical, and accessible format for non-coding audiences."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "MUSA 5080 Portfolio",
-    "section": "",
-    "text": "This portfolio documents my learning journey in Public Policy Analytics (MUSA 5080).\n\n\nAdvanced spatial analysis and data science for urban planning and public policy.\n\n\n\n\nWeekly Notes: My learning reflections and key concepts\nLabs: Completed assignments and analyses\nFinal Project: Capstone modeling challenge\n\n\n\n\nMohamad Al Abbas was born in Beirut, Lebanon. He holds a Bachelor’s degree in Electrical and Computer Engineering and a Master of Arts in International Affairs. He is currently pursuing a joint PhD in Demography and Sociology, though he identifies more closely as an environmental demographer and sociologist. His research focuses on climate change and population health, particularly among children under five and pregnant women. Mohamad’s most recent work argues that using administrative borders as controls in climate–health research is problematic in low- and middle-income countries. Instead, he suggests that researchers adopt definitions based on environmental rather than political boundaries.\n\n\n\n\nEmail: [ma96@upenn.edu]\nGitHub: [@MohamadAlAbbas-PhD]\n\n\n\n\nMohamad is enrolled in this course to gain a stronger understanding of public policy in relation to urban spatial design, as well as to develop a more streamlined and polished pipeline for coding and research article preparation. He hopes to use this repository as a template for sharing code in publications and scholarly work."
-  },
-  {
-    "objectID": "index.html#about-this-course",
-    "href": "index.html#about-this-course",
-    "title": "MUSA 5080 Portfolio",
-    "section": "",
-    "text": "Advanced spatial analysis and data science for urban planning and public policy."
-  },
-  {
-    "objectID": "index.html#portfolio-structure",
-    "href": "index.html#portfolio-structure",
-    "title": "MUSA 5080 Portfolio",
-    "section": "",
-    "text": "Weekly Notes: My learning reflections and key concepts\nLabs: Completed assignments and analyses\nFinal Project: Capstone modeling challenge"
-  },
-  {
-    "objectID": "index.html#about-me",
-    "href": "index.html#about-me",
-    "title": "MUSA 5080 Portfolio",
-    "section": "",
-    "text": "Mohamad Al Abbas was born in Beirut, Lebanon. He holds a Bachelor’s degree in Electrical and Computer Engineering and a Master of Arts in International Affairs. He is currently pursuing a joint PhD in Demography and Sociology, though he identifies more closely as an environmental demographer and sociologist. His research focuses on climate change and population health, particularly among children under five and pregnant women. Mohamad’s most recent work argues that using administrative borders as controls in climate–health research is problematic in low- and middle-income countries. Instead, he suggests that researchers adopt definitions based on environmental rather than political boundaries."
-  },
-  {
-    "objectID": "index.html#contact",
-    "href": "index.html#contact",
-    "title": "MUSA 5080 Portfolio",
-    "section": "",
-    "text": "Email: [ma96@upenn.edu]\nGitHub: [@MohamadAlAbbas-PhD]"
-  },
-  {
-    "objectID": "index.html#why-this-course",
-    "href": "index.html#why-this-course",
-    "title": "MUSA 5080 Portfolio",
-    "section": "",
-    "text": "Mohamad is enrolled in this course to gain a stronger understanding of public policy in relation to urban spatial design, as well as to develop a more streamlined and polished pipeline for coding and research article preparation. He hopes to use this repository as a template for sharing code in publications and scholarly work."
   },
   {
     "objectID": "instructions_week1.html",
@@ -166,5 +208,187 @@
     "title": "Portfolio Setup Instructions",
     "section": "",
     "text": "Before submitting, make sure you’ve: - [ ] Customized _quarto.yml with your name - [ ] Updated index.qmd with your information - [ ] Completed Week 1 notes - [ ] Enabled GitHub Pages - [ ] Verified your website loads correctly - [ ] Submitted your URL to Canvas\n\nNeed help? Don’t struggle alone - reach out during office hours (mine + TAs) or in class!"
+  },
+  {
+    "objectID": "cv.html",
+    "href": "cv.html",
+    "title": "Curriculum Vitae: Mohamad Al Abbas",
+    "section": "",
+    "text": "PhD in Demography, University of Pennsylvania, Expected May 2028\n\nMA in International Affairs, Lebanese American University, May 2023\nBE in Electrical Engineering, Lebanese American University, August 2019\n\n\n\n\n\nTeaching Assistant, University of Pennsylvania – Graduate School of Education (2025–present)\n\nLead lab sessions on STATA for Principles of Monitoring and Evaluation, a graduate-level course\n\nResearch Assistant, University of Pennsylvania – PIRE Project (2023–present)\n\nNSF-funded project on environmental degradation and child development\n\nPaper: Born in a Haze (forest fires & health outcomes in Indonesia)\n\n\nStatistical Consultant, Department of Sociology, University of Pennsylvania (2023–present)\n\nSupport PhD students in Sociology and Demography\n\nConduct workshops on machine learning techniques\n\n\nResearch Intern, UNDP Office of Audit & Investigations (2022–2023)\n\nDrafted investigation plans, reports, and conducted interviews\n\n\nResearch Intern, Center for International Policy – Technology Policy Program (2022–2023)\n\nDesigned Social Media Harms tracker\n\nAuthored briefs and attended U.S. legislative hearings\n\n\nResearch Assistant – Individual Contractor, UN ESCWA (2022)\n\nBuilt/improved social demographic database (29% → 83% completion)\n\n\nMonitoring & Evaluation Officer, LAU – Graduate Studies & Research (2019–2021)\n\nGraduate Teaching Assistant, LAU – Electrical & Computer Engineering (2019–2021)\n\n\n\n\n\nBenjamin Franklin Fellowship, University of Pennsylvania (2024–2028)\n\nDean’s Fellowship, University of Pennsylvania (2023–2024)\n\nMEPI – Tomorrow’s Leaders Graduate Fellowship, LAU (2021–2023)\n\nOutstanding Researcher Award, LAU (2021)\n\nBest Presentation Award, ICIET Japan (2022)\n\n\n\n\n\nProgramming: R, Python, Stata, Java, Assembly\n\nMachine Learning: NLP, RL, Neural Networks (CNN & RNN), Decision Trees\n\nSoftware: Tableau, MATLAB, SPSS, LaTeX\n\nLanguages: English (Bilingual), Arabic (Native)\n\n\n\n\n\nEmail: ma96@upenn.edu\n\nLinkedIn: linkedin.com/in/mohammadalabbas96\n\nORCID: 0000-0002-2084-8856"
+  },
+  {
+    "objectID": "cv.html#education",
+    "href": "cv.html#education",
+    "title": "Curriculum Vitae: Mohamad Al Abbas",
+    "section": "",
+    "text": "PhD in Demography, University of Pennsylvania, Expected May 2028\n\nMA in International Affairs, Lebanese American University, May 2023\nBE in Electrical Engineering, Lebanese American University, August 2019"
+  },
+  {
+    "objectID": "cv.html#experience",
+    "href": "cv.html#experience",
+    "title": "Curriculum Vitae: Mohamad Al Abbas",
+    "section": "",
+    "text": "Teaching Assistant, University of Pennsylvania – Graduate School of Education (2025–present)\n\nLead lab sessions on STATA for Principles of Monitoring and Evaluation, a graduate-level course\n\nResearch Assistant, University of Pennsylvania – PIRE Project (2023–present)\n\nNSF-funded project on environmental degradation and child development\n\nPaper: Born in a Haze (forest fires & health outcomes in Indonesia)\n\n\nStatistical Consultant, Department of Sociology, University of Pennsylvania (2023–present)\n\nSupport PhD students in Sociology and Demography\n\nConduct workshops on machine learning techniques\n\n\nResearch Intern, UNDP Office of Audit & Investigations (2022–2023)\n\nDrafted investigation plans, reports, and conducted interviews\n\n\nResearch Intern, Center for International Policy – Technology Policy Program (2022–2023)\n\nDesigned Social Media Harms tracker\n\nAuthored briefs and attended U.S. legislative hearings\n\n\nResearch Assistant – Individual Contractor, UN ESCWA (2022)\n\nBuilt/improved social demographic database (29% → 83% completion)\n\n\nMonitoring & Evaluation Officer, LAU – Graduate Studies & Research (2019–2021)\n\nGraduate Teaching Assistant, LAU – Electrical & Computer Engineering (2019–2021)"
+  },
+  {
+    "objectID": "cv.html#fellowships-awards",
+    "href": "cv.html#fellowships-awards",
+    "title": "Curriculum Vitae: Mohamad Al Abbas",
+    "section": "",
+    "text": "Benjamin Franklin Fellowship, University of Pennsylvania (2024–2028)\n\nDean’s Fellowship, University of Pennsylvania (2023–2024)\n\nMEPI – Tomorrow’s Leaders Graduate Fellowship, LAU (2021–2023)\n\nOutstanding Researcher Award, LAU (2021)\n\nBest Presentation Award, ICIET Japan (2022)"
+  },
+  {
+    "objectID": "cv.html#skills",
+    "href": "cv.html#skills",
+    "title": "Curriculum Vitae: Mohamad Al Abbas",
+    "section": "",
+    "text": "Programming: R, Python, Stata, Java, Assembly\n\nMachine Learning: NLP, RL, Neural Networks (CNN & RNN), Decision Trees\n\nSoftware: Tableau, MATLAB, SPSS, LaTeX\n\nLanguages: English (Bilingual), Arabic (Native)"
+  },
+  {
+    "objectID": "cv.html#contact",
+    "href": "cv.html#contact",
+    "title": "Curriculum Vitae: Mohamad Al Abbas",
+    "section": "",
+    "text": "Email: ma96@upenn.edu\n\nLinkedIn: linkedin.com/in/mohammadalabbas96\n\nORCID: 0000-0002-2084-8856"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "MUSA 5080 Portfolio",
+    "section": "",
+    "text": "This portfolio documents my learning journey in Public Policy Analytics (MUSA 5080).\n\n\nAdvanced spatial analysis and data science for urban planning and public policy.\n\n\n\n\nWeekly Notes: My learning reflections and key concepts\nLabs: Completed assignments and analyses\nFinal Project: Capstone modeling challenge\n\n\n\n\nMohamad Al Abbas was born in Beirut, Lebanon. He holds a Bachelor’s degree in Electrical and Computer Engineering and a Master of Arts in International Affairs. He is currently pursuing a joint PhD in Demography and Sociology, though he identifies more closely as an environmental demographer and sociologist. His research focuses on climate change and population health, particularly among children under five and pregnant women. Mohamad’s most recent work argues that using administrative borders as controls in climate–health research is problematic in low- and middle-income countries. Instead, he suggests that researchers adopt definitions based on environmental rather than political boundaries.\nView my full CV → View my Publication list →\n\n\n\n\nEmail: ma96@upenn.edu\nGitHub: @MohamadAlAbbas-PhD\n\n\n\n\nMohamad is enrolled in this course to gain a stronger understanding of public policy in relation to urban spatial design, as well as to develop a more streamlined and polished pipeline for coding and research article preparation. He hopes to use this repository as a template for sharing code in publications and scholarly work."
+  },
+  {
+    "objectID": "index.html#about-this-course",
+    "href": "index.html#about-this-course",
+    "title": "MUSA 5080 Portfolio",
+    "section": "",
+    "text": "Advanced spatial analysis and data science for urban planning and public policy."
+  },
+  {
+    "objectID": "index.html#portfolio-structure",
+    "href": "index.html#portfolio-structure",
+    "title": "MUSA 5080 Portfolio",
+    "section": "",
+    "text": "Weekly Notes: My learning reflections and key concepts\nLabs: Completed assignments and analyses\nFinal Project: Capstone modeling challenge"
+  },
+  {
+    "objectID": "index.html#about-me",
+    "href": "index.html#about-me",
+    "title": "MUSA 5080 Portfolio",
+    "section": "",
+    "text": "Mohamad Al Abbas was born in Beirut, Lebanon. He holds a Bachelor’s degree in Electrical and Computer Engineering and a Master of Arts in International Affairs. He is currently pursuing a joint PhD in Demography and Sociology, though he identifies more closely as an environmental demographer and sociologist. His research focuses on climate change and population health, particularly among children under five and pregnant women. Mohamad’s most recent work argues that using administrative borders as controls in climate–health research is problematic in low- and middle-income countries. Instead, he suggests that researchers adopt definitions based on environmental rather than political boundaries.\nView my full CV → View my Publication list →"
+  },
+  {
+    "objectID": "index.html#contact",
+    "href": "index.html#contact",
+    "title": "MUSA 5080 Portfolio",
+    "section": "",
+    "text": "Email: ma96@upenn.edu\nGitHub: @MohamadAlAbbas-PhD"
+  },
+  {
+    "objectID": "index.html#why-this-course",
+    "href": "index.html#why-this-course",
+    "title": "MUSA 5080 Portfolio",
+    "section": "",
+    "text": "Mohamad is enrolled in this course to gain a stronger understanding of public policy in relation to urban spatial design, as well as to develop a more streamlined and polished pipeline for coding and research article preparation. He hopes to use this repository as a template for sharing code in publications and scholarly work."
+  },
+  {
+    "objectID": "Publications.html",
+    "href": "Publications.html",
+    "title": "Mohamad Al Abbas - MUSA 5080 Portfolio",
+    "section": "",
+    "text": "Born in a Haze: Early-life exposure to forest fires and child health in Indonesia\n\nExamines impacts of forest fire–related haze on children’s HAZ/WAZ growth indicators using IFLS data.\n\nDevelops clustering algorithms and k-means quintile regression for fire exposure.\n\nCrude Consequences: The Impact of Oil Spills on Child Health and Environmental Vulnerability in Nigeria\n\nIntegrates MICS data with daily oil spill trackers.\n\nExplores stratified vulnerability and child health outcomes.\n\nClimate–Health across Biomes: Stratified impacts of precipitation and temperature on children’s health\n\nMulti-country analysis of diarrhea, fever, cough, and WHZ outcomes.\n\nExamines biome interactions with climate anomalies.\n\nCross-Border Nutritional Vulnerability in Shared Ecologies (India, Bangladesh, Nepal)\n\nDHS-based spatial analysis of child undernutrition near borders.\n\nTests whether ecological context outweighs political boundaries.\n\nCRAM (Climate-Resilient Access Metric): Healthcare isolation in vulnerable regions\n\nDeveloping an index to measure resilience of healthcare access to climate shocks.\n\nFocus on flood seasonality and maternal health risks.\n\nLong-Term PM2.5 Exposure and Cardiovascular Disease in Indonesia\n\nCohort-based study using IFLS (2000–2014).\n\nModels morbidity-adjusted CVD outcomes under cumulative pollution exposure.\n\nDisaster–Health Mediation: Natural disasters as instruments for water contamination\n\nUses IV regression with MICS surveys to assess diarrheal outcomes.\n\nExplores mediation via healthcare-seeking behaviors and infrastructure."
+  },
+  {
+    "objectID": "Publications.html#ongoing-research-projects",
+    "href": "Publications.html#ongoing-research-projects",
+    "title": "Mohamad Al Abbas - MUSA 5080 Portfolio",
+    "section": "",
+    "text": "Born in a Haze: Early-life exposure to forest fires and child health in Indonesia\n\nExamines impacts of forest fire–related haze on children’s HAZ/WAZ growth indicators using IFLS data.\n\nDevelops clustering algorithms and k-means quintile regression for fire exposure.\n\nCrude Consequences: The Impact of Oil Spills on Child Health and Environmental Vulnerability in Nigeria\n\nIntegrates MICS data with daily oil spill trackers.\n\nExplores stratified vulnerability and child health outcomes.\n\nClimate–Health across Biomes: Stratified impacts of precipitation and temperature on children’s health\n\nMulti-country analysis of diarrhea, fever, cough, and WHZ outcomes.\n\nExamines biome interactions with climate anomalies.\n\nCross-Border Nutritional Vulnerability in Shared Ecologies (India, Bangladesh, Nepal)\n\nDHS-based spatial analysis of child undernutrition near borders.\n\nTests whether ecological context outweighs political boundaries.\n\nCRAM (Climate-Resilient Access Metric): Healthcare isolation in vulnerable regions\n\nDeveloping an index to measure resilience of healthcare access to climate shocks.\n\nFocus on flood seasonality and maternal health risks.\n\nLong-Term PM2.5 Exposure and Cardiovascular Disease in Indonesia\n\nCohort-based study using IFLS (2000–2014).\n\nModels morbidity-adjusted CVD outcomes under cumulative pollution exposure.\n\nDisaster–Health Mediation: Natural disasters as instruments for water contamination\n\nUses IV regression with MICS surveys to assess diarrheal outcomes.\n\nExplores mediation via healthcare-seeking behaviors and infrastructure."
+  },
+  {
+    "objectID": "Publications.html#in-progress-methodological-work",
+    "href": "Publications.html#in-progress-methodological-work",
+    "title": "Mohamad Al Abbas - MUSA 5080 Portfolio",
+    "section": "In Progress Methodological Work",
+    "text": "In Progress Methodological Work\n\nMultistate Life Table Models\n\nTransition modeling between Healthy–Unhealthy–Dead states in IFLS morbidity data.\n\nReplication of Payne et al. (2013) with microsimulation extensions.\n\nSpatial Climate–Health Pipelines\n\nDynamic extraction of precipitation/temperature anomalies via CHIRPS/NOAA rasters.\n\nIntegrating z-scores and climate windows aligned with DHS/MICS survey interviews."
+  },
+  {
+    "objectID": "Publications.html#publications",
+    "href": "Publications.html#publications",
+    "title": "Mohamad Al Abbas - MUSA 5080 Portfolio",
+    "section": "Publications",
+    "text": "Publications\n\nDisparate social impacts by satellite and self-report: Floods in Pernambuco, Brazil — Population & Environment (under review)\n\nRacism, Discrimination, and Scapegoating in the Era of COVID-19 — IMS Policy and Working Paper Series\nEnvironmental Determinants of Migration: Air Pollution in Developing Nations — IMS Blog – Borders and Limitations (2022)\n\nGender Inequity in Engineering Higher Education: A Case Study of an American University in a Middle Eastern Country — ICIET Conference Proceedings (2022)\n\nThe Impact of Faculty Scholarly Collaborations with Non-Doctoral Students — IEEE IRTM Conference (2022)\n\nThe Lebanese Diaspora: From Passive to Retaliatory — IMS Blog – Borders and Limitations (2022)\n\nQuantifying Publisher’s Competence Through Scholarly Engagement — Publishing Research Quarterly (2021)\n\nA Case Study of Gender Diversity in a Middle Eastern University — IEEE IT-Based Higher Education & Training Conference (2021)\n\nSetting the Boundaries of COVID-19 Lockdown Relaxation Measures — Library Hi Tech (2021)\n\nSustainable Gender Equity Influenced by an Americanized Lebanese Pedagogy — World Conference on Women’s Studies (2021)\n\nToward an Improvement of Engineering Teaming Skills Through an In-House Professionalism Course — IEEE Transactions on Education (2020)\n\nFormation of Policies Guided by Multivariable Control Theory — Operations Research Perspectives (2020)\n\nThe Impact of Collaborative Research: A Case Study in a Developing Country — IEEE SMIT Conference (2020)\n\nOn the Impact of Multi-Authorship Scholarly Publications — IEEE ATMR Conference (2020)"
+  },
+  {
+    "objectID": "weekly-notes/week-02-notes.html#coding-techniques",
+    "href": "weekly-notes/week-02-notes.html#coding-techniques",
+    "title": "Week 2 Notes - Course Introduction",
+    "section": "## Coding Techniques",
+    "text": "## Coding Techniques"
+  },
+  {
+    "objectID": "weekly-notes/week-02-notes.html#questions-challenges",
+    "href": "weekly-notes/week-02-notes.html#questions-challenges",
+    "title": "Week 2 Notes - Course Introduction",
+    "section": "Questions & Challenges",
+    "text": "Questions & Challenges"
+  },
+  {
+    "objectID": "weekly-notes/week-02-notes.html#connections-to-policy",
+    "href": "weekly-notes/week-02-notes.html#connections-to-policy",
+    "title": "Week 2 Notes - Course Introduction",
+    "section": "Connections to Policy",
+    "text": "Connections to Policy"
+  },
+  {
+    "objectID": "weekly-notes/week-02-notes.html#reflection",
+    "href": "weekly-notes/week-02-notes.html#reflection",
+    "title": "Week 2 Notes - Course Introduction",
+    "section": "## Reflection",
+    "text": "## Reflection"
+  },
+  {
+    "objectID": "weekly-notes/week-04-notes.html",
+    "href": "weekly-notes/week-04-notes.html",
+    "title": "Week 1 Notes - Course Introduction",
+    "section": "",
+    "text": "Setting up repositories on"
+  },
+  {
+    "objectID": "weekly-notes/week-04-notes.html#key-concepts-learned",
+    "href": "weekly-notes/week-04-notes.html#key-concepts-learned",
+    "title": "Week 1 Notes - Course Introduction",
+    "section": "",
+    "text": "Setting up repositories on"
+  },
+  {
+    "objectID": "weekly-notes/week-04-notes.html#coding-techniques",
+    "href": "weekly-notes/week-04-notes.html#coding-techniques",
+    "title": "Week 1 Notes - Course Introduction",
+    "section": "Coding Techniques",
+    "text": "Coding Techniques\n\nBasics of tidyverse and its accompanying commands of filter(), select(), mutate(), and summarize()\nQuarto functions on how to bold, italics, both bold and italics, code list, and strikethrough"
+  },
+  {
+    "objectID": "weekly-notes/week-04-notes.html#questions-challenges",
+    "href": "weekly-notes/week-04-notes.html#questions-challenges",
+    "title": "Week 1 Notes - Course Introduction",
+    "section": "Questions & Challenges",
+    "text": "Questions & Challenges\n\n\n\nEverything was clear. I would still like to mess around more with Quarto."
+  },
+  {
+    "objectID": "weekly-notes/week-04-notes.html#connections-to-policy",
+    "href": "weekly-notes/week-04-notes.html#connections-to-policy",
+    "title": "Week 1 Notes - Course Introduction",
+    "section": "Connections to Policy",
+    "text": "Connections to Policy\n\n\nThis was a building block week, so not much of direct application rather tracking and documentation baseline for setup."
+  },
+  {
+    "objectID": "weekly-notes/week-04-notes.html#reflection",
+    "href": "weekly-notes/week-04-notes.html#reflection",
+    "title": "Week 1 Notes - Course Introduction",
+    "section": "Reflection",
+    "text": "Reflection\n\nLearning how to create a custom repository was both enjoyable and insightful.\nIt could also serve as a way to share supplementary analyses and to present code in a more public, graphical, and accessible format for non-coding audiences."
   }
 ]

@@ -15,11 +15,13 @@ Advanced spatial analysis and data science for urban planning and public policy.
 - **Final Project:** Capstone modeling challenge
 
 ## About Me
-Mohamad Al Abbas was born in Beirut, Lebanon. He holds a Bachelor’s degree in Electrical and Computer Engineering and a Master of Arts in International Affairs. He is currently pursuing a joint PhD in Demography and Sociology, though he identifies more closely as an environmental demographer and sociologist. His research focuses on climate change and population health, particularly among children under five and pregnant women. Mohamad’s most recent work argues that using administrative borders as controls in climate–health research is problematic in low- and middle-income countries. Instead, he suggests that researchers adopt definitions based on environmental rather than political boundaries.
+Mohamad Al Abbas was born in Beirut, Lebanon. He holds a Bachelor’s degree in Electrical and Computer Engineering and a Master of Arts in International Affairs. He is currently pursuing a joint PhD in Demography and Sociology, though he identifies more closely as an environmental demographer and sociologist. His research focuses on climate change and population health, particularly among children under five and pregnant women. Mohamad’s most recent work argues that using administrative borders as controls in climate–health research is problematic in low- and middle-income countries. Instead, he suggests that researchers adopt definitions based on environmental rather than political boundaries.  
+[View my full CV →](cv.qmd)
+[View my Publication list →](Publications.qmd)
 
 ## Contact
-- Email: [ma96@upenn.edu]
-- GitHub: [@MohamadAlAbbas-PhD]
+- Email: ma96@upenn.edu
+- GitHub: @MohamadAlAbbas-PhD
 
 ## Why this course?
 Mohamad is enrolled in this course to gain a stronger understanding of public policy in relation to urban spatial design, as well as to develop a more streamlined and polished pipeline for coding and research article preparation. He hopes to use this repository as a template for sharing code in publications and scholarly work.
