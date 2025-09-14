@@ -16,7 +16,7 @@ Advanced spatial analysis and data science for urban planning and public policy.
 
 ## About Me
 Mohamad Al Abbas was born in Beirut, Lebanon. He holds a Bachelor’s degree in Electrical and Computer Engineering and a Master of Arts in International Affairs. He is currently pursuing a joint PhD in Demography and Sociology, though he identifies more closely as an environmental demographer and sociologist. His research focuses on climate change and population health, particularly among children under five and pregnant women. Mohamad’s most recent work argues that using administrative borders as controls in climate–health research is problematic in low- and middle-income countries. Instead, he suggests that researchers adopt definitions based on environmental rather than political boundaries.  
-[View my full CV →](cv.qmd) | [View my Publication list](Publications.qmd)  
+[View my full CV](cv.qmd) | [View my Publication list](Publications.qmd)  
 
 
 ## Contact
