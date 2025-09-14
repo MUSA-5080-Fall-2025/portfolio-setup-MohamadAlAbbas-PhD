@@ -28,15 +28,14 @@ date: "2025-09-08"
   - mutate() create new variables 
   - summarize() calculate statistics 
   - group_by() operate on sub-groups
-- summarize and group_by tend ot happen together and typically using a pipeline %>%
+- Summarize and group_by tend ot happen together and typically using a pipeline %>%
+- %>% pipelines are used to connect multiple codes in one command line rather than a sequence.
 
 ## Questions & Challenges
-<!-- [What I didn't fully understand]] -->
-<!-- [Areas needing more practice] -->
 - Everything was clear. I would still like to mess around more with Quarto.
+- I messed around with Quarto again @ 9/14/2025
 
 ## Connections to Policy
-<!-- [How this week's content applies to real policy work] -->
 - This was a building block week, so not much of direct application rather tracking and documentation baseline for setup. 
 
 ## Reflection

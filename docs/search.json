@@ -102,21 +102,21 @@
     "href": "weekly-notes/week-01-notes.html#coding-techniques",
     "title": "Week 1 Notes - Course Introduction",
     "section": "Coding Techniques",
-    "text": "Coding Techniques\n\nBasics of tidyverse and its accompanying commands of filter(), select(), mutate(), and summarize()\nQuarto functions on how to bold, italics, both bold and italics, code list, and strikethrough\nQuarto uses — as the header call\n“#” are used as the header calls\nTibbles\n\nselect() choose columns\nfilter() choose rows\nmutate() create new variables\nsummarize() calculate statistics\ngroup_by() operate on sub-groups\n\nsummarize and group_by tend ot happen together and typically using a pipeline %&gt;%"
+    "text": "Coding Techniques\n\nBasics of tidyverse and its accompanying commands of filter(), select(), mutate(), and summarize()\nQuarto functions on how to bold, italics, both bold and italics, code list, and strikethrough\nQuarto uses — as the header call\n“#” are used as the header calls\nTibbles\n\nselect() choose columns\nfilter() choose rows\nmutate() create new variables\nsummarize() calculate statistics\ngroup_by() operate on sub-groups\n\nSummarize and group_by tend ot happen together and typically using a pipeline %&gt;%\n%&gt;% pipelines are used to connect multiple codes in one command line rather than a sequence."
   },
   {
     "objectID": "weekly-notes/week-01-notes.html#questions-challenges",
     "href": "weekly-notes/week-01-notes.html#questions-challenges",
     "title": "Week 1 Notes - Course Introduction",
     "section": "Questions & Challenges",
-    "text": "Questions & Challenges\n\n\n\nEverything was clear. I would still like to mess around more with Quarto."
+    "text": "Questions & Challenges\n\nEverything was clear. I would still like to mess around more with Quarto.\nI messed around with Quarto again @ 9/14/2025"
   },
   {
     "objectID": "weekly-notes/week-01-notes.html#connections-to-policy",
     "href": "weekly-notes/week-01-notes.html#connections-to-policy",
     "title": "Week 1 Notes - Course Introduction",
     "section": "Connections to Policy",
-    "text": "Connections to Policy\n\n\nThis was a building block week, so not much of direct application rather tracking and documentation baseline for setup."
+    "text": "Connections to Policy\n\nThis was a building block week, so not much of direct application rather tracking and documentation baseline for setup."
   },
   {
     "objectID": "weekly-notes/week-01-notes.html#reflection",
@@ -256,7 +256,7 @@
     "href": "index.html",
     "title": "MUSA 5080 Portfolio",
     "section": "",
-    "text": "This portfolio documents my learning journey in Public Policy Analytics (MUSA 5080).\n\n\nAdvanced spatial analysis and data science for urban planning and public policy.\n\n\n\n\nWeekly Notes: My learning reflections and key concepts\nLabs: Completed assignments and analyses\nFinal Project: Capstone modeling challenge\n\n\n\n\nMohamad Al Abbas was born in Beirut, Lebanon. He holds a Bachelor’s degree in Electrical and Computer Engineering and a Master of Arts in International Affairs. He is currently pursuing a joint PhD in Demography and Sociology, though he identifies more closely as an environmental demographer and sociologist. His research focuses on climate change and population health, particularly among children under five and pregnant women. Mohamad’s most recent work argues that using administrative borders as controls in climate–health research is problematic in low- and middle-income countries. Instead, he suggests that researchers adopt definitions based on environmental rather than political boundaries.\n- View my full CV → - View my Publication list →\n\n\n\n\nEmail: ma96@upenn.edu\nGitHub: @MohamadAlAbbas-PhD\n\n\n\n\nMohamad is enrolled in this course to gain a stronger understanding of public policy in relation to urban spatial design, as well as to develop a more streamlined and polished pipeline for coding and research article preparation. He hopes to use this repository as a template for sharing code in publications and scholarly work."
+    "text": "This portfolio documents my learning journey in Public Policy Analytics (MUSA 5080).\n\n\nAdvanced spatial analysis and data science for urban planning and public policy.\n\n\n\n\nWeekly Notes: My learning reflections and key concepts\nLabs: Completed assignments and analyses\nFinal Project: Capstone modeling challenge\n\n\n\n\nMohamad Al Abbas was born in Beirut, Lebanon. He holds a Bachelor’s degree in Electrical and Computer Engineering and a Master of Arts in International Affairs. He is currently pursuing a joint PhD in Demography and Sociology, though he identifies more closely as an environmental demographer and sociologist. His research focuses on climate change and population health, particularly among children under five and pregnant women. Mohamad’s most recent work argues that using administrative borders as controls in climate–health research is problematic in low- and middle-income countries. Instead, he suggests that researchers adopt definitions based on environmental rather than political boundaries.\n\nView my full CV →\n\nView my Publication list →\n\n\n\n\n\nEmail: ma96@upenn.edu\nGitHub: @MohamadAlAbbas-PhD\n\n\n\n\nMohamad is enrolled in this course to gain a stronger understanding of public policy in relation to urban spatial design, as well as to develop a more streamlined and polished pipeline for coding and research article preparation. He hopes to use this repository as a template for sharing code in publications and scholarly work."
   },
   {
     "objectID": "index.html#about-this-course",
@@ -277,7 +277,7 @@
     "href": "index.html#about-me",
     "title": "MUSA 5080 Portfolio",
     "section": "",
-    "text": "Mohamad Al Abbas was born in Beirut, Lebanon. He holds a Bachelor’s degree in Electrical and Computer Engineering and a Master of Arts in International Affairs. He is currently pursuing a joint PhD in Demography and Sociology, though he identifies more closely as an environmental demographer and sociologist. His research focuses on climate change and population health, particularly among children under five and pregnant women. Mohamad’s most recent work argues that using administrative borders as controls in climate–health research is problematic in low- and middle-income countries. Instead, he suggests that researchers adopt definitions based on environmental rather than political boundaries.\n- View my full CV → - View my Publication list →"
+    "text": "Mohamad Al Abbas was born in Beirut, Lebanon. He holds a Bachelor’s degree in Electrical and Computer Engineering and a Master of Arts in International Affairs. He is currently pursuing a joint PhD in Demography and Sociology, though he identifies more closely as an environmental demographer and sociologist. His research focuses on climate change and population health, particularly among children under five and pregnant women. Mohamad’s most recent work argues that using administrative borders as controls in climate–health research is problematic in low- and middle-income countries. Instead, he suggests that researchers adopt definitions based on environmental rather than political boundaries.\n\nView my full CV →\n\nView my Publication list →"
   },
   {
     "objectID": "index.html#contact",
