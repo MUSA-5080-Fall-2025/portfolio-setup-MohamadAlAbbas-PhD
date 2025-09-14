@@ -4,12 +4,31 @@ date: "2025-09-08"
 ---
 
 ## Key Concepts Learned
-<!-- [Concepts & Not codes] -->
+- Public Sector Data scinece has several considerations different from private sector
+  - Public good, and equity consideration
+  - Needs to be interpretable and not have algorithmic bias
+- Git is for version control system (VCS)
+- Github is the cloud computing backend of Git
+- Github Lingo
+  - Folder -> Repo
+  - Commit -> Post a snapshot
+  - Push means to send files to cloud
+  - Pull downloads the files to local machine
 - Setting up repositories on
+- "YAML Ain't Markup Language"
 
 ## Coding Techniques
 - Basics of tidyverse and its accompanying commands of filter(), select(), mutate(), and summarize()
 - Quarto functions on how to **bold**, *italics*, ***both bold and italics***, `code list`, and ~~strikethrough~~ 
+- Quarto uses --- as the header call
+- "#" are used as the header calls
+- Tibbles 
+  - select() choose columns
+  - filter() choose rows
+  - mutate() create new variables 
+  - summarize() calculate statistics 
+  - group_by() operate on sub-groups
+- summarize and group_by tend ot happen together and typically using a pipeline %>%
 
 ## Questions & Challenges
 <!-- [What I didn't fully understand]] -->
