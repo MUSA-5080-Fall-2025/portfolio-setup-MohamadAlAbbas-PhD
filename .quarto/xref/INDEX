@@ -25,5 +25,14 @@
   },
   "weekly-notes/week-05-notes.qmd": {
     "week-05-notes.html": "1f616708"
+  },
+  "labs/lab_0/lab0_template.qmd": {
+    "lab0_template.html": "332c57f3"
+  },
+  "labs/lab_1/assignment1_template.qmd": {
+    "assignment1_template.html": "700ddf98"
+  },
+  "labs/lab_setup_instructions.qmd": {
+    "lab_setup_instructions.html": "ec5176de"
   }
 }
