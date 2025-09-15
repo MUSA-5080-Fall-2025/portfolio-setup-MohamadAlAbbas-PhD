@@ -1,0 +1,7 @@
+"0","# Frequency table for price categories"
+"0",""
+"0","freq_cat <- car_data %>%"
+"0","  count(price_category, name = ""frequency"") %>%"
+"0","  mutate(proportion = frequency / sum(frequency))"
+"0",""
+"0","freq_cat"
