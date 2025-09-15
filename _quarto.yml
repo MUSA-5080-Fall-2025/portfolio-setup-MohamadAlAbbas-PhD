@@ -2,7 +2,7 @@ project:
   type: website
   output-dir: docs
 
-Website:
+website:
   title: "Mohamad Al Abbas - MUSA 5080 Portfolio"
   navbar:
     left:
@@ -23,9 +23,9 @@ Website:
       - text: Weekly Notes
         menu: 
           - href: weekly-notes/week-01-notes.qmd
-            text: "Week 1"
+            text: Week 1
           - href: weekly-notes/week-02-notes.qmd
-            text: "Week 2"
+            text: Week 2
           
 format:
   html:
