@@ -1,8 +1,0 @@
-"0",""
-"0","# Calculate average mileage by fuel type"
-"0",""
-"0","avg_price_by_brand <- car_data %>%"
-"0","  group_by(`Fuel type`) %>%"
-"0","  summarize(avg_mileage = mean(Mileage, na.rm = TRUE))"
-"0",""
-"0","avg_price_by_brand"

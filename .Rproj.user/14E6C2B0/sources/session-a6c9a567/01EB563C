@@ -3,9 +3,9 @@
     "path": "~/GitHub/portfolio-setup-MohamadAlAbbas-PhD/labs/lab_0/lab0_template.qmd",
     "project_path": "labs/lab_0/lab0_template.qmd",
     "type": "quarto_markdown",
-    "hash": "0",
+    "hash": "3769847137",
     "contents": "",
-    "dirty": true,
+    "dirty": false,
     "created": 1757949334244.0,
     "source_on_save": false,
     "relative_order": 2,
@@ -22,11 +22,11 @@
         "docOutlineVisible": "1"
     },
     "folds": "",
-    "lastKnownWriteTime": 1757951270,
+    "lastKnownWriteTime": 1757952672,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1757951410390,
+    "last_content_update": 1757952672430,
     "read_only": false,
     "read_only_alternatives": []
 }

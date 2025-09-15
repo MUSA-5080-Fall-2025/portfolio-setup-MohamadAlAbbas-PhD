@@ -1,7 +1,0 @@
-"0",""
-"0","# Count cars by manufacturer"
-"0",""
-"0","car_counts <- car_data %>%"
-"0","  count(Manufacturer)"
-"0",""
-"0","car_counts"
