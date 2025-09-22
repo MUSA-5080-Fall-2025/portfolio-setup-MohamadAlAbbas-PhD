@@ -34,5 +34,11 @@
   },
   "labs/lab_setup_instructions.qmd": {
     "lab_setup_instructions.html": "ec5176de"
+  },
+  "labs/week-03/lecture/week3.qmd": {
+    "week3.html": "8e1ded0d"
+  },
+  "labs/week-03/scrips/week3_lab_exercise.qmd": {
+    "week3_lab_exercise.html": "32a1b1b4"
   }
 }

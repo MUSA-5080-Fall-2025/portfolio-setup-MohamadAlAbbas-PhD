@@ -3,7 +3,7 @@
     "path": "~/GitHub/portfolio-setup-MohamadAlAbbas-PhD/_quarto.yml",
     "project_path": "_quarto.yml",
     "type": "yaml",
-    "hash": "2348746229",
+    "hash": "198796504",
     "contents": "",
     "dirty": false,
     "created": 1758550469957.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "28,38",
-        "scrollLine": "0"
+        "cursorPosition": "25,24",
+        "scrollLine": "16"
     },
     "folds": "",
-    "lastKnownWriteTime": 1758552212,
+    "lastKnownWriteTime": 1758552952,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1758552212690,
+    "last_content_update": 1758552952237,
     "read_only": false,
     "read_only_alternatives": []
 }
