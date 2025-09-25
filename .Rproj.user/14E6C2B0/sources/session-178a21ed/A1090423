@@ -3,7 +3,7 @@
     "path": "~/GitHub/portfolio-setup-MohamadAlAbbas-PhD/Assignments/Assignment_1/assignment1_template.qmd",
     "project_path": "Assignments/Assignment_1/assignment1_template.qmd",
     "type": "quarto_markdown",
-    "hash": "1089248780",
+    "hash": "1023983638",
     "contents": "",
     "dirty": false,
     "created": 1758836410999.0,
@@ -12,16 +12,16 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "443,30",
-        "scrollLine": "431",
+        "cursorPosition": "410,52",
+        "scrollLine": "406",
         "last_setup_crc32": "178a21ed216634ca"
     },
     "folds": "",
-    "lastKnownWriteTime": 1758836795,
+    "lastKnownWriteTime": 1758837114,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1758836795245,
+    "last_content_update": 1758837114396,
     "read_only": false,
     "read_only_alternatives": []
 }

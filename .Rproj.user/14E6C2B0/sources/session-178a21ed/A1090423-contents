@@ -410,14 +410,6 @@ kable(
 
 ## 5.1 Analysis Integration and Professional Summary
 
-**Your Task:** Write an executive summary that integrates findings from all four analyses.
-
-**Executive Summary Requirements:**
-1. **Overall Pattern Identification**: What are the systematic patterns across all your analyses?
-2. **Equity Assessment**: Which communities face the greatest risk of algorithmic bias based on your findings?
-3. **Root Cause Analysis**: What underlying factors drive both data quality issues and bias risk?
-4. **Strategic Recommendations**: What should the Department implement to address these systematic issues?
-
 **Executive Summary:**
 
 Across county- and tract-level analyses, two systematic patterns consistently appear. First, tracts and counties with smaller populations tend to have disproportionately high margins of error, making their estimates far less stable than those from larger areas. Second, the reliability of racial and ethnic subgroup estimates varies sharply: Black and Hispanic populations are much more likely to have margins of error above 15%, and in some cases, the ACS does not capture enough observations to produce valid estimates. Together, these patterns show that measurement error is pervasive but not random it reflects structural features of both tract size and demographic composition.
@@ -480,13 +472,14 @@ kable(
 2. **Counties requiring additional oversight:** Amador, Calaveras, Colusa, Del Norte, Glenn, Inyo, Lassen, Mariposa, Modoc, San Benito, Tehama, and Tuolumne
 
 3. **Counties needing alternative approaches:** Alpine, Mono, Plumas, Sierra, and Trinity
+
 ## Questions for Further Investigation
 
-Are high-MOE tracts clustered spatially (e.g., along rural–urban boundaries or in specific regions of the state), or do they appear evenly dispersed?
+1. Are high-MOE tracts clustered spatially (e.g., along rural–urban boundaries or in specific regions of the state), or do they appear evenly dispersed?
 
-Do MOE patterns persist across ACS releases, or do they improve over time with larger samples? A time-series comparison could reveal whether underrepresentation of minority or rural communities is a persistent structural issue, similar to how you track flood or disaster impacts across years.
+2. Do MOE patterns persist across ACS releases, or do they improve over time with larger samples? A time-series comparison could reveal whether underrepresentation of minority or rural communities is a persistent structural issue, similar to how you track flood or disaster impacts across years.
 
-How do MOE patterns for racial and ethnic groups vary across states? Are high MOEs for Hispanic and Black populations a uniquely California phenomenon, or do they reflect a broader national issue embedded in ACS sampling design?
+3. How do MOE patterns for racial and ethnic groups vary across states? Are high MOEs for Hispanic and Black populations a uniquely California phenomenon, or do they reflect a broader national issue embedded in ACS sampling design?
 
 # Technical Notes
 

@@ -235,6 +235,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#analysis-integration-and-professional-summary" id="toc-analysis-integration-and-professional-summary" class="nav-link" data-scroll-target="#analysis-integration-and-professional-summary">5.1 Analysis Integration and Professional Summary</a></li>
   <li><a href="#specific-recommendations" id="toc-specific-recommendations" class="nav-link" data-scroll-target="#specific-recommendations">6.3 Specific Recommendations</a></li>
+  <li><a href="#questions-for-further-investigation" id="toc-questions-for-further-investigation" class="nav-link" data-scroll-target="#questions-for-further-investigation">Questions for Further Investigation</a></li>
   </ul></li>
   <li><a href="#technical-notes" id="toc-technical-notes" class="nav-link" data-scroll-target="#technical-notes">Technical Notes</a>
   <ul class="collapse">
@@ -2104,8 +2105,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Part 5: Policy Recommendations</h1>
 <section id="analysis-integration-and-professional-summary" class="level2">
 <h2 class="anchored" data-anchor-id="analysis-integration-and-professional-summary">5.1 Analysis Integration and Professional Summary</h2>
-<p><strong>Your Task:</strong> Write an executive summary that integrates findings from all four analyses.</p>
-<p><strong>Executive Summary Requirements:</strong> 1. <strong>Overall Pattern Identification</strong>: What are the systematic patterns across all your analyses? 2. <strong>Equity Assessment</strong>: Which communities face the greatest risk of algorithmic bias based on your findings? 3. <strong>Root Cause Analysis</strong>: What underlying factors drive both data quality issues and bias risk? 4. <strong>Strategic Recommendations</strong>: What should the Department implement to address these systematic issues?</p>
 <p><strong>Executive Summary:</strong></p>
 <p>Across county- and tract-level analyses, two systematic patterns consistently appear. First, tracts and counties with smaller populations tend to have disproportionately high margins of error, making their estimates far less stable than those from larger areas. Second, the reliability of racial and ethnic subgroup estimates varies sharply: Black and Hispanic populations are much more likely to have margins of error above 15%, and in some cases, the ACS does not capture enough observations to produce valid estimates. Together, these patterns show that measurement error is pervasive but not random it reflects structural features of both tract size and demographic composition.</p>
 <p>Communities facing the greatest risk of algorithmic bias are those that are either very small and rural or racially/ethnically diverse. Rural tracts, because of small sample sizes, may be flagged as unreliable and thus deprioritized in automated systems, despite having genuine needs. At the same time, urban minority communities, particularly those with large Hispanic or Black populations, often show the highest subgroup MOEs, meaning their conditions could be systematically misclassified or underestimated. In both cases, the communities already at risk of marginalization are the same ones where the data is least reliable.</p>
@@ -2585,11 +2584,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li><p><strong>Counties suitable for immediate algorithmic implementation:</strong> Alameda, Butte, Contra Costa, El Dorado, Fresno, Humboldt, Imperial, Kern, Kings, Lake, Los Angeles, Madera Marin, Mendocino, Merced, Monterey, Napa, Nevada, Orange, Placer, Riverside, Sacramento, San Bernardino, San Diego, San Francisco, San Joaquin, San Luis Obispo, San Mateo, Santa Barbara, Santa Clara, Santa Cruz, Shasta,Siskiyou, Solano, Sonoma, Stainislaus, Sutter, Tulare, Ventura, Yolo, and Yuba</p></li>
 <li><p><strong>Counties requiring additional oversight:</strong> Amador, Calaveras, Colusa, Del Norte, Glenn, Inyo, Lassen, Mariposa, Modoc, San Benito, Tehama, and Tuolumne</p></li>
-<li><p><strong>Counties needing alternative approaches:</strong> Alpine, Mono, Plumas, Sierra, and Trinity ## Questions for Further Investigation</p></li>
+<li><p><strong>Counties needing alternative approaches:</strong> Alpine, Mono, Plumas, Sierra, and Trinity</p></li>
 </ol>
-<p>Are high-MOE tracts clustered spatially (e.g., along rural–urban boundaries or in specific regions of the state), or do they appear evenly dispersed?</p>
-<p>Do MOE patterns persist across ACS releases, or do they improve over time with larger samples? A time-series comparison could reveal whether underrepresentation of minority or rural communities is a persistent structural issue, similar to how you track flood or disaster impacts across years.</p>
-<p>How do MOE patterns for racial and ethnic groups vary across states? Are high MOEs for Hispanic and Black populations a uniquely California phenomenon, or do they reflect a broader national issue embedded in ACS sampling design?</p>
+</section>
+<section id="questions-for-further-investigation" class="level2">
+<h2 class="anchored" data-anchor-id="questions-for-further-investigation">Questions for Further Investigation</h2>
+<ol type="1">
+<li><p>Are high-MOE tracts clustered spatially (e.g., along rural–urban boundaries or in specific regions of the state), or do they appear evenly dispersed?</p></li>
+<li><p>Do MOE patterns persist across ACS releases, or do they improve over time with larger samples? A time-series comparison could reveal whether underrepresentation of minority or rural communities is a persistent structural issue, similar to how you track flood or disaster impacts across years.</p></li>
+<li><p>How do MOE patterns for racial and ethnic groups vary across states? Are high MOEs for Hispanic and Black populations a uniquely California phenomenon, or do they reflect a broader national issue embedded in ACS sampling design?</p></li>
+</ol>
 </section>
 </section>
 <section id="technical-notes" class="level1">
