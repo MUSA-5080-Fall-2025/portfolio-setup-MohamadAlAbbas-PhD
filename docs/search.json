@@ -508,14 +508,14 @@
     "href": "labs/lab_1/assignment1_template.html",
     "title": "Assignment 1: Census Data Quality for Policy Decisions",
     "section": "",
-    "text": "You are a data analyst for the [Your State] Department of Human Services. The department is considering implementing an algorithmic system to identify communities that should receive priority for social service funding and outreach programs. Your supervisor has asked you to evaluate the quality and reliability of available census data to inform this decision.\nDrawing on our Week 2 discussion of algorithmic bias, you need to assess not just what the data shows, but how reliable it is and what communities might be affected by data quality issues.\n\n\n\n\nApply dplyr functions to real census data for policy analysis\nEvaluate data quality using margins of error\nConnect technical analysis to algorithmic decision-making\nIdentify potential equity implications of data reliability issues\nCreate professional documentation for policy stakeholders\n\n\n\n\nSubmit by posting your updated portfolio link on Canvas. Your assignment should be accessible at your-portfolio-url/assignments/assignment_1/\nMake sure to update your _quarto.yml navigation to include this assignment under an “Assignments” menu."
+    "text": "You are a data analyst for the California Department of Human Services. The department is considering implementing an algorithmic system to identify communities that should receive priority for social service funding and outreach programs. Your supervisor has asked you to evaluate the quality and reliability of available census data to inform this decision.\nDrawing on our Week 2 discussion of algorithmic bias, you need to assess not just what the data shows, but how reliable it is and what communities might be affected by data quality issues.\n\n\n\n\nApply dplyr functions to real census data for policy analysis\nEvaluate data quality using margins of error\nConnect technical analysis to algorithmic decision-making\nIdentify potential equity implications of data reliability issues\nCreate professional documentation for policy stakeholders"
   },
   {
     "objectID": "labs/lab_1/assignment1_template.html#scenario",
     "href": "labs/lab_1/assignment1_template.html#scenario",
     "title": "Assignment 1: Census Data Quality for Policy Decisions",
     "section": "",
-    "text": "You are a data analyst for the [Your State] Department of Human Services. The department is considering implementing an algorithmic system to identify communities that should receive priority for social service funding and outreach programs. Your supervisor has asked you to evaluate the quality and reliability of available census data to inform this decision.\nDrawing on our Week 2 discussion of algorithmic bias, you need to assess not just what the data shows, but how reliable it is and what communities might be affected by data quality issues."
+    "text": "You are a data analyst for the California Department of Human Services. The department is considering implementing an algorithmic system to identify communities that should receive priority for social service funding and outreach programs. Your supervisor has asked you to evaluate the quality and reliability of available census data to inform this decision.\nDrawing on our Week 2 discussion of algorithmic bias, you need to assess not just what the data shows, but how reliable it is and what communities might be affected by data quality issues."
   },
   {
     "objectID": "labs/lab_1/assignment1_template.html#learning-objectives",
@@ -523,13 +523,6 @@
     "title": "Assignment 1: Census Data Quality for Policy Decisions",
     "section": "",
     "text": "Apply dplyr functions to real census data for policy analysis\nEvaluate data quality using margins of error\nConnect technical analysis to algorithmic decision-making\nIdentify potential equity implications of data reliability issues\nCreate professional documentation for policy stakeholders"
-  },
-  {
-    "objectID": "labs/lab_1/assignment1_template.html#submission-instructions",
-    "href": "labs/lab_1/assignment1_template.html#submission-instructions",
-    "title": "Assignment 1: Census Data Quality for Policy Decisions",
-    "section": "",
-    "text": "Submit by posting your updated portfolio link on Canvas. Your assignment should be accessible at your-portfolio-url/assignments/assignment_1/\nMake sure to update your _quarto.yml navigation to include this assignment under an “Assignments” menu."
   },
   {
     "objectID": "labs/lab_1/assignment1_template.html#data-retrieval",
@@ -543,7 +536,7 @@
     "href": "labs/lab_1/assignment1_template.html#data-quality-assessment",
     "title": "Assignment 1: Census Data Quality for Policy Decisions",
     "section": "2.2 Data Quality Assessment",
-    "text": "2.2 Data Quality Assessment\nYour Task: Calculate margin of error percentages and create reliability categories.\nRequirements: - Calculate MOE percentage: (margin of error / estimate) * 100 - Create reliability categories: - High Confidence: MOE &lt; 5% - Moderate Confidence: MOE 5-10%\n- Low Confidence: MOE &gt; 10% - Create a flag for unreliable estimates (MOE &gt; 10%)\nHint: Use mutate() with case_when() for the categories.\n\n# Calculate MOE percentage and reliability categories using mutate()\ncounty_reliability &lt;- county %&gt;%\n  mutate(\n    moe_percentage = round((med_hh_incomeM/med_hh_incomeE) * 100, 2),\n    reliability = case_when(\n      moe_percentage &lt; 5 ~ \"High Confidence\",\n      moe_percentage &gt;= 5 & moe_percentage &lt;= 10 ~ \"Moderate Confidence\",\n      moe_percentage &gt; 10 ~ \"Low Confidence\"\n    )\n  )\n\nreliability_summary &lt;- county_reliability %&gt;%\n  count(reliability, name = \"Count\") %&gt;%\n  mutate(Proportion = round(100 * Count / sum(Count), 1))\n\nkable(reliability_summary, caption = \"County Income Reliability Categories\")\n\n\nCounty Income Reliability Categories\n\n\nreliability\nCount\nProportion\n\n\n\n\nHigh Confidence\n41\n70.7\n\n\nLow Confidence\n5\n8.6\n\n\nModerate Confidence\n12\n20.7\n\n\n\n\n# Create a summary showing count of counties in each reliability category\n# Hint: use count() and mutate() to add percentages"
+    "text": "2.2 Data Quality Assessment\nYour Task: Calculate margin of error percentages and create reliability categories.\nRequirements: - Calculate MOE percentage: (margin of error / estimate) * 100 - Create reliability categories: - High Confidence: MOE &lt; 5% - Moderate Confidence: MOE 5-10%\n- Low Confidence: MOE &gt; 10% - Create a flag for unreliable estimates (MOE &gt; 10%)\nHint: Use mutate() with case_when() for the categories.\n\n# Calculate MOE percentage and reliability categories using mutate()\ncounty_reliability &lt;- county %&gt;%\n  mutate(\n    moe_percentage = round((med_hh_incomeM/med_hh_incomeE) * 100, 2),\n    reliability = case_when(\n      moe_percentage &lt; 5 ~ \"High Confidence\",\n      moe_percentage &gt;= 5 & moe_percentage &lt;= 10 ~ \"Moderate Confidence\",\n      moe_percentage &gt; 10 ~ \"Low Confidence\"\n    )\n  )\n\n# Create a summary showing count of counties in each reliability category\n# Hint: use count() and mutate() to add percentages\n\nreliability_summary &lt;- county_reliability %&gt;%\n  count(reliability, name = \"Count\") %&gt;%\n  mutate(Proportion = round(100 * Count / sum(Count), 1))\n\nkable(reliability_summary, caption = \"County Income Reliability Categories\")\n\n\nCounty Income Reliability Categories\n\n\nreliability\nCount\nProportion\n\n\n\n\nHigh Confidence\n41\n70.7\n\n\nLow Confidence\n5\n8.6\n\n\nModerate Confidence\n12\n20.7"
   },
   {
     "objectID": "labs/lab_1/assignment1_template.html#high-uncertainty-counties",

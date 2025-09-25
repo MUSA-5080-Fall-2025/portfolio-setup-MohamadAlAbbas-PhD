@@ -1,7 +1,7 @@
 ---
 title: "Assignment 1: Census Data Quality for Policy Decisions"
 subtitle: "Evaluating Data Reliability for Algorithmic Decision-Making"
-author: "Your Name Here"
+author: "Mohamad Al Abbas"
 date: today
 format: 
   html:
@@ -18,7 +18,7 @@ execute:
 
 ## Scenario
 
-You are a data analyst for the **[Your State] Department of Human Services**. The department is considering implementing an algorithmic system to identify communities that should receive priority for social service funding and outreach programs. Your supervisor has asked you to evaluate the quality and reliability of available census data to inform this decision.
+You are a data analyst for the **California Department of Human Services**. The department is considering implementing an algorithmic system to identify communities that should receive priority for social service funding and outreach programs. Your supervisor has asked you to evaluate the quality and reliability of available census data to inform this decision.
  
 Drawing on our Week 2 discussion of algorithmic bias, you need to assess not just what the data shows, but how reliable it is and what communities might be affected by data quality issues.
 
@@ -30,23 +30,7 @@ Drawing on our Week 2 discussion of algorithmic bias, you need to assess not jus
 - Identify potential equity implications of data reliability issues
 - Create professional documentation for policy stakeholders
 
-## Submission Instructions
-
-**Submit by posting your updated portfolio link on Canvas.** Your assignment should be accessible at `your-portfolio-url/assignments/assignment_1/`
-
-Make sure to update your `_quarto.yml` navigation to include this assignment under an "Assignments" menu.
-
 # Part 1: Portfolio Integration
-
-Create this assignment in your portfolio repository under an `assignments/assignment_1/` folder structure. Update your navigation menu to include:
-
-```
-- text: Assignments
-  menu:
-    - href: assignments/assignment_1/your_file_name.qmd
-      text: "Assignment 1: Census Data Exploration"
-```
-If there is a special character like comma, you need use double quote mark so that the quarto can identify this as text
 
 # Setup
 
@@ -129,15 +113,15 @@ county_reliability <- county %>%
     )
   )
 
+# Create a summary showing count of counties in each reliability category
+# Hint: use count() and mutate() to add percentages
+
 reliability_summary <- county_reliability %>%
   count(reliability, name = "Count") %>%
   mutate(Proportion = round(100 * Count / sum(Count), 1))
 
 kable(reliability_summary, caption = "County Income Reliability Categories")
 
-
-# Create a summary showing count of counties in each reliability category
-# Hint: use count() and mutate() to add percentages
 ```
 
 ## 2.3 High Uncertainty Counties
