@@ -4,22 +4,52 @@ date: "2025-09-22"
 ---
 
 ## Key Concepts Learned
-<!-- [Concepts & Not codes] -->
-- Setting up repositories on
+- EDA is exploratory data analysis:
+  - What the data looks like (distribution and missings)
+  - What patterns exist (clustering and relationships)
+  - What's unusual (outliers)
+  - what questions does this raise
+  - how reliable is the dataset
+  
+- Best practcies: 
+  - Report corresponding MOEs of ACS estimates
+  - Include a footnote to acknolwedge MOEs if not reporting
+  - provide unreliability context which would revolve around the coefficient of variation (CV <12% being good, 12-40% somewhat reliable, and CV > 40% being concerning)
+  - reduce statistical uncertainty, collapse or aggregate data
+  - stat significance tests are recommended as you go. 
+
+- Are there geographic patterns or correlations? 
+- Population relationships, how size affect data quality 
+- Are certain communities systematically different 
+- 
 
 ## Coding Techniques
-- Basics of tidyverse and its accompanying commands of filter(), select(), mutate(), and summarize()
-- Quarto functions on how to **bold**, *italics*, ***both bold and italics***, `code list`, and ~~strikethrough~~ 
+- ggplot2:
+  - Data is the actual datasets
+  - Aesthetics, variables mapped to visual properties (x ,y ,color, size )
+  - Geometries, how to display the data (points, bars, lines)
+  - Additional layers: scales, themes, facets and annotations
+  
+- Aesthetics: 
+  - x, y, are data positions
+  - color of the point/line
+  - fill, is the area color 
+  - size, point/line size
+  - shape, point shape
+  - alpha, transparency
+  
+- left_join() - keep all rows from left dataset
+- right_join() - keep all rows from right dataset
+- inner_join() - Keep matching only
+- full_join() - just merge the datasets
 
 ## Questions & Challenges
-<!-- [What I didn't fully understand]] -->
-<!-- [Areas needing more practice] -->
-- Everything was clear. I would still like to mess around more with Quarto.
+- Everything was clear.
 
 ## Connections to Policy
 <!-- [How this week's content applies to real policy work] -->
-- This was a building block week, so not much of direct application rather tracking and documentation baseline for setup. 
+- Analyzing bias within data before running analysis and providing recommendations
+- this is done to allow us to ensure that no group is discriminated or biased against within the recommendations. 
 
 ## Reflection
-- Learning how to create a custom repository was both enjoyable and insightful.
-- It could also serve as a way to share supplementary analyses and to present code in a more public, graphical, and accessible format for non-coding audiences.
+- good practices in terms of coding and communication .

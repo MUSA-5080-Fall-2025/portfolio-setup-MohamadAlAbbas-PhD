@@ -25,7 +25,7 @@ library(tidycensus)
 library(scales)
 library(RColorBrewer)
 # Set your Census API key if you haven't already
-census_api_key(Sys.getenv("CENSUS_API_KEY"))
+census_api_key(Sys.getenv("807ea1c0820a3e1e46dde3c53438622057fcc1ba"))
 
 # We'll use Pennsylvania data for consistency with previous weeks
 state_choice <- "PA"
@@ -308,6 +308,21 @@ and identify outliers.
 -   Create a boxplot to identify population outliers
 -   Find and list the 3 most populous and 3 least populous counties
 
+```{r}
+# Create histogram of median income
+ggplot(county_data) +
+  aes(x = total_popE) +
+  geom_histogram(bins = 15, fill = "darkgreen", alpha = 0.7) +
+  labs(
+    title = "Distribution of Total Population",
+    x = "Total Population",
+    y = "Number of Counties"
+  ) +
+  theme_minimal() +
+  scale_x_continuous(labels = comma)
+```
+
+
 ------------------------------------------------------------------------
 
 ## Exercise 2: Two Variable Relationships
@@ -397,6 +412,22 @@ income using different visualization techniques.
 -   Format the y-axis with dollar signs
 -   Add a title that mentions both variables
 
+```{r}
+# Log-transformed scatter plot
+ggplot(county_data) +
+  aes(x = median_ageE, y = median_incomeE) +
+  geom_point(alpha = 0.7) +
+  geom_smooth(method = "loess", se = TRUE, color ="red") +
+  labs(
+    title = "Median Age vs Median Income",
+    x = "Median Age",
+    y = "Median Household Income ($)"
+  ) +
+  theme_dark() +
+  scale_y_continuous(labels = dollar)
+```
+
+
 ------------------------------------------------------------------------
 
 ## Exercise 3: Data Quality Visualization 
@@ -469,6 +500,40 @@ population vs age MOE percentage
 using `geom_hline()` with a blue dashed line 
 - Use `theme_classic()`instead of `theme_minimal()` 
 - Create a boxplot comparing age MOE across the three population categories
+
+```{r}
+# Box plots by population category
+county_reliability <- county_reliability %>%
+  mutate(
+    age_moe_pct = (median_ageM / median_ageE * 100)
+    )
+
+# MOE by population size
+ggplot(county_reliability) +
+  aes(x = total_popE, y = age_moe_pct) +
+  geom_point(alpha = 0.7, color="purple", size = 2) +
+  geom_hline(yintercept = 5, color = "blue", linetype = "dashed") +
+  labs(
+    title = "Data Reliability Decreases with Population Size",
+    x = "Total Population",
+    y = "Margin of Error (%)",
+    caption = "Blue line = 5% reliability threshold"
+  ) +
+  theme_classic() +
+  scale_x_continuous(labels = comma)
+
+ggplot(county_reliability) +
+  aes(x = pop_category, y = age_moe_pct, fill = pop_category) +
+  geom_boxplot() +
+  labs(
+    title = "Data Reliability by County Size Category",
+    x = "Population Category",
+    y = "Age Margin of Error (%)"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none")  # Remove legend since x-axis is clear
+```
+
 
 ------------------------------------------------------------------------
 
