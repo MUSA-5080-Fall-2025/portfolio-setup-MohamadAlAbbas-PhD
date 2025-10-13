@@ -32,6 +32,8 @@ website:
         menu: 
           - href: Assignments/Assignment_1/assignment1_template.qmd
             text: "Assignment 1: Census Data Quality for Policy Decisions"
+          - href: Assignments/Assignment_2/AlAbbas_Mohamad_Assignment2.qmd
+            text: "Assignment 2: Healthcare Access and Equity in Pennsylvania"
 format:
   html:
     theme: cosmo
