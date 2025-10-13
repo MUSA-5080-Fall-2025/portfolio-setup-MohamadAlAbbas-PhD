@@ -20,6 +20,8 @@ website:
             text: "Week 0: dplyr Basics"
           - href: labs/week-03/scrips/week3_lab_exercise.qmd
             text: "Week 3: Data Visualization and EDA"
+          - href: labs/week-04/scripts/week4_inclass_practice.qmd
+            text: "Week 4: Spatial Operations with Pennsylvania Data"
       - text: Weekly Notes
         menu: 
           - href: weekly-notes/week-01-notes.qmd
