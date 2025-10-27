@@ -1,0 +1,4 @@
+"0",""
+"0","clean_data$neigh <- as.factor(clean_data$neigh)"
+"2","Error: object 'clean_data' not found
+"

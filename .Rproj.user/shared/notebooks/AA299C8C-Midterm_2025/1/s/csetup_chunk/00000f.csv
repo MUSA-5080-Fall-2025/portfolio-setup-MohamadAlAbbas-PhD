@@ -25,6 +25,7 @@
 "0","library(forcats)"
 "0","library(purrr)"
 "0","library(zoo)"
+"0","library(kableExtra)"
 "0",""
 "0","options(warn = -1)"
 "0","options(tigris_use_cache = TRUE)"
