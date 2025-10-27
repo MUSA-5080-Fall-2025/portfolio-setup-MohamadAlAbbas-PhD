@@ -3,7 +3,15 @@
         {
             "columnIndex": 2,
             "ascending": true
+        },
+        {
+            "columnIndex": 4,
+            "ascending": false
+        },
+        {
+            "columnIndex": 3,
+            "ascending": false
         }
     ],
-    "path": "~/GitHub/portfolio-setup-MohamadAlAbbas-PhD/Assignments/Assignment_2"
+    "path": "~/GitHub/portfolio-setup-MohamadAlAbbas-PhD/labs/week-06/data"
 }
