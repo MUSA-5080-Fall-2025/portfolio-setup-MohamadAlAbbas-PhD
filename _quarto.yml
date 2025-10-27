@@ -39,9 +39,9 @@ website:
       - text: Midterm
         menu: 
           - href: midterm/appendix/Midterm_2025.qmd
-            text: "Single-Family Home Price Prediction in Philadelphia"
+            text: "Technical Appendix"
           - href: midterm/slides/Midterm_slides_v3.qmd
-            text: "Improving Property Tax Assessments"
+            text: "Slides"
             
 format:
   html:
