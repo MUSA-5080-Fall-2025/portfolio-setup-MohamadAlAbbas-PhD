@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<style>body{background-color:white;}</style>
+<script src="lib/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="lib/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="lib/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="lib/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="lib/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="lib/kePrint-0.0.1/kePrint.js"></script>
+<link href="lib/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+</head>
+<body>
+<table class="table table-condensed table-striped" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>Sample of ACS features joined to fishnet</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">  </th>
+   <th style="text-align:right;"> abandoned_houses </th>
+   <th style="text-align:right;"> pct_black </th>
+   <th style="text-align:right;"> pct_hisp </th>
+   <th style="text-align:right;"> pct_white </th>
+   <th style="text-align:right;"> pct_poverty </th>
+   <th style="text-align:right;"> pct_renter </th>
+   <th style="text-align:right;"> pct_vacant </th>
+   <th style="text-align:right;"> med_income </th>
+   <th style="text-align:right;"> pct_45_64 </th>
+   <th style="text-align:right;"> pct_65_plus </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> 1 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 92.91420 </td>
+   <td style="text-align:right;"> 5.050245 </td>
+   <td style="text-align:right;"> 0.8760629 </td>
+   <td style="text-align:right;"> 62.12316 </td>
+   <td style="text-align:right;"> 93.27074 </td>
+   <td style="text-align:right;"> 31.25336 </td>
+   <td style="text-align:right;"> 12660 </td>
+   <td style="text-align:right;"> 14.94460 </td>
+   <td style="text-align:right;"> 3.169286 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 1.1 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 93.25363 </td>
+   <td style="text-align:right;"> 3.131227 </td>
+   <td style="text-align:right;"> 3.3304868 </td>
+   <td style="text-align:right;"> 63.80422 </td>
+   <td style="text-align:right;"> 86.69565 </td>
+   <td style="text-align:right;"> 20.41522 </td>
+   <td style="text-align:right;"> 14439 </td>
+   <td style="text-align:right;"> 16.28238 </td>
+   <td style="text-align:right;"> 6.461714 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 2 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 92.91420 </td>
+   <td style="text-align:right;"> 5.050245 </td>
+   <td style="text-align:right;"> 0.8760629 </td>
+   <td style="text-align:right;"> 62.12316 </td>
+   <td style="text-align:right;"> 93.27074 </td>
+   <td style="text-align:right;"> 31.25336 </td>
+   <td style="text-align:right;"> 12660 </td>
+   <td style="text-align:right;"> 14.94460 </td>
+   <td style="text-align:right;"> 3.169286 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 2.1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 93.25363 </td>
+   <td style="text-align:right;"> 3.131227 </td>
+   <td style="text-align:right;"> 3.3304868 </td>
+   <td style="text-align:right;"> 63.80422 </td>
+   <td style="text-align:right;"> 86.69565 </td>
+   <td style="text-align:right;"> 20.41522 </td>
+   <td style="text-align:right;"> 14439 </td>
+   <td style="text-align:right;"> 16.28238 </td>
+   <td style="text-align:right;"> 6.461714 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 3 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 92.91420 </td>
+   <td style="text-align:right;"> 5.050245 </td>
+   <td style="text-align:right;"> 0.8760629 </td>
+   <td style="text-align:right;"> 62.12316 </td>
+   <td style="text-align:right;"> 93.27074 </td>
+   <td style="text-align:right;"> 31.25336 </td>
+   <td style="text-align:right;"> 12660 </td>
+   <td style="text-align:right;"> 14.94460 </td>
+   <td style="text-align:right;"> 3.169286 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 4 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 92.91420 </td>
+   <td style="text-align:right;"> 5.050245 </td>
+   <td style="text-align:right;"> 0.8760629 </td>
+   <td style="text-align:right;"> 62.12316 </td>
+   <td style="text-align:right;"> 93.27074 </td>
+   <td style="text-align:right;"> 31.25336 </td>
+   <td style="text-align:right;"> 12660 </td>
+   <td style="text-align:right;"> 14.94460 </td>
+   <td style="text-align:right;"> 3.169286 </td>
+  </tr>
+</tbody>
+</table> <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [["$","$"]]}})</script><script async src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
