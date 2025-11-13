@@ -891,7 +891,7 @@ fishnet <- fishnet %>%
   )
 ```
 
-## KDE Modeling 
+## KDE Modeling
 
 A final Negative Binomial model is fitted on the training data using the vacancy measures and ACS controls as predictors. Predictions from this model are then mapped back to the spatial grid (the fishnet). The KDE surface is converted into a comparable prediction by rescaling, which yields a predicted KDE, a pseudo-count prediction that sums to the observed total. We then create, three maps of actual burglaries, Negative Binomial predictions, and KDE predictions. The combined figure provides a direct visual comparison between observed counts and the two competing prediction methods.
 
@@ -982,7 +982,7 @@ These results temper the earlier, more favorable qualitative impression of the N
 
 ## Prediction Errors
 
-This code block examines where each method performs poorly by mapping residuals over space.Two error maps are then created, one for each KDE and Negative Binomial. 
+This code block examines where each method performs poorly by mapping residuals over space.Two error maps are then created, one for each KDE and Negative Binomial.
 
 ```{r prediction-errors}
 #| fig-width: 10
@@ -1042,10 +1042,9 @@ Panel (A) maps the signed errors for the Negative Binomial model (actual minus p
 
 Comparing the two panels, the spatial pattern of errors is broadly similar, but with some subtle differences. The KDE baseline in Panel (B) tends to make larger mistakes right at the cores of historical hot spots, where its smooth kernel surface can either overconcentrate risk or miss micro-level variation along hot-spot edges. The Negative Binomial model in Panel (A) shows a slightly more diffuse pattern of residuals, with errors spread across structurally similar neighborhoods rather than tightly glued to past event locations. This aligns with the numeric evaluation: KDE attains somewhat lower MAE/RMSE overall, but both methods struggle most in the same high-crime corridors. The model’s advantage remains interpretive and structural, tying errors to vacancy and neighborhood context, rather than a clear reduction in spatial prediction error.
 
-
 # Temporal Validation on 2018 Burglaries
 
-The prediction errors are unexpectedly large, and I was not able, within the scope of this assignment, to identify a convincing explanation. In some cells the model misses on the order of 15–20 burglaries, which is uncomfortably high. One might expect abandoned houses to be only a modest predictor—vacancy is relatively stationary and concentrated in disadvantaged, low-income neighborhoods—but even with that caveat, the deterioration in performance compared with earlier work using similar 2017 data is puzzling. My best guess is that the problem lies less in data coding and more in some combination of model specification choices, the way the training and prediction sets were constructed, and the limits of using 311 calls as a proxy for underlying risk. Because I am not confident that these results are substantively reliable, I treat this section primarily as a demonstration of workflow rather than as a basis for strong inference. The exercise shows how to build and compare spatial versus temporal prediction models. 
+The prediction errors are unexpectedly large, and I was not able, within the scope of this assignment, to identify a convincing explanation. In some cells the model misses on the order of 15–20 burglaries, which is uncomfortably high. One might expect abandoned houses to be only a modest predictor—vacancy is relatively stationary and concentrated in disadvantaged, low-income neighborhoods—but even with that caveat, the deterioration in performance compared with earlier work using similar 2017 data is puzzling. My best guess is that the problem lies less in data coding and more in some combination of model specification choices, the way the training and prediction sets were constructed, and the limits of using 311 calls as a proxy for underlying risk. Because I am not confident that these results are substantively reliable, I treat this section primarily as a demonstration of workflow rather than as a basis for strong inference. The exercise shows how to build and compare spatial versus temporal prediction models.
 
 ## Load and Aggregate 2018 Burglaries
 

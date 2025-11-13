@@ -36,6 +36,8 @@ website:
             text: "Assignment 1: Census Data Quality for Policy Decisions"
           - href: Assignments/Assignment_2/AlAbbas_Mohamad_Assignment2.qmd
             text: "Assignment 2: Healthcare Access and Equity in Pennsylvania"
+          - href: Assignments/Assignment_4/Assignment4.qmd
+            text: "Assignment 4: Spatial Predictive Analysis"
       - text: Midterm
         menu: 
           - href: midterm/appendix/Midterm_2025.qmd
