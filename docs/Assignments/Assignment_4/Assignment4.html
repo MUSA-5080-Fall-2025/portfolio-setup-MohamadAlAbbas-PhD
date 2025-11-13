@@ -4182,6 +4182,10 @@ border: 0;
     <a class="dropdown-item" href="../../Assignments/Assignment_2/AlAbbas_Mohamad_Assignment2.html">
  <span class="dropdown-text">Assignment 2: Healthcare Access and Equity in Pennsylvania</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../../Assignments/Assignment_4/Assignment4.html">
+ <span class="dropdown-text">Assignment 4: Spatial Predictive Analysis</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -7380,7 +7384,7 @@ Recommendation:
 <span id="cb32-924"><a href="#cb32-924" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb32-925"><a href="#cb32-925" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb32-926"><a href="#cb32-926" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-927"><a href="#cb32-927" aria-hidden="true" tabindex="-1"></a><span class="fu">## KDE Modeling </span></span>
+<span id="cb32-927"><a href="#cb32-927" aria-hidden="true" tabindex="-1"></a><span class="fu">## KDE Modeling</span></span>
 <span id="cb32-928"><a href="#cb32-928" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-929"><a href="#cb32-929" aria-hidden="true" tabindex="-1"></a>A final Negative Binomial model is fitted on the training data using the vacancy measures and ACS controls as predictors. Predictions from this model are then mapped back to the spatial grid (the fishnet). The KDE surface is converted into a comparable prediction by rescaling, which yields a predicted KDE, a pseudo-count prediction that sums to the observed total. We then create, three maps of actual burglaries, Negative Binomial predictions, and KDE predictions. The combined figure provides a direct visual comparison between observed counts and the two competing prediction methods.</span>
 <span id="cb32-930"><a href="#cb32-930" aria-hidden="true" tabindex="-1"></a></span>
@@ -7471,7 +7475,7 @@ Recommendation:
 <span id="cb32-1017"><a href="#cb32-1017" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-1018"><a href="#cb32-1018" aria-hidden="true" tabindex="-1"></a><span class="fu">## Prediction Errors</span></span>
 <span id="cb32-1019"><a href="#cb32-1019" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1020"><a href="#cb32-1020" aria-hidden="true" tabindex="-1"></a>This code block examines where each method performs poorly by mapping residuals over space.Two error maps are then created, one for each KDE and Negative Binomial. </span>
+<span id="cb32-1020"><a href="#cb32-1020" aria-hidden="true" tabindex="-1"></a>This code block examines where each method performs poorly by mapping residuals over space.Two error maps are then created, one for each KDE and Negative Binomial.</span>
 <span id="cb32-1021"><a href="#cb32-1021" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-1022"><a href="#cb32-1022" aria-hidden="true" tabindex="-1"></a><span class="in">```{r prediction-errors}</span></span>
 <span id="cb32-1023"><a href="#cb32-1023" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 10</span></span>
@@ -7531,148 +7535,147 @@ Recommendation:
 <span id="cb32-1077"><a href="#cb32-1077" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-1078"><a href="#cb32-1078" aria-hidden="true" tabindex="-1"></a>Comparing the two panels, the spatial pattern of errors is broadly similar, but with some subtle differences. The KDE baseline in Panel (B) tends to make larger mistakes right at the cores of historical hot spots, where its smooth kernel surface can either overconcentrate risk or miss micro-level variation along hot-spot edges. The Negative Binomial model in Panel (A) shows a slightly more diffuse pattern of residuals, with errors spread across structurally similar neighborhoods rather than tightly glued to past event locations. This aligns with the numeric evaluation: KDE attains somewhat lower MAE/RMSE overall, but both methods struggle most in the same high-crime corridors. The model’s advantage remains interpretive and structural, tying errors to vacancy and neighborhood context, rather than a clear reduction in spatial prediction error.</span>
 <span id="cb32-1079"><a href="#cb32-1079" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1080"><a href="#cb32-1080" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1081"><a href="#cb32-1081" aria-hidden="true" tabindex="-1"></a><span class="fu"># Temporal Validation on 2018 Burglaries</span></span>
-<span id="cb32-1082"><a href="#cb32-1082" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1083"><a href="#cb32-1083" aria-hidden="true" tabindex="-1"></a>The prediction errors are unexpectedly large, and I was not able, within the scope of this assignment, to identify a convincing explanation. In some cells the model misses on the order of 15–20 burglaries, which is uncomfortably high. One might expect abandoned houses to be only a modest predictor—vacancy is relatively stationary and concentrated in disadvantaged, low-income neighborhoods—but even with that caveat, the deterioration in performance compared with earlier work using similar 2017 data is puzzling. My best guess is that the problem lies less in data coding and more in some combination of model specification choices, the way the training and prediction sets were constructed, and the limits of using 311 calls as a proxy for underlying risk. Because I am not confident that these results are substantively reliable, I treat this section primarily as a demonstration of workflow rather than as a basis for strong inference. The exercise shows how to build and compare spatial versus temporal prediction models. </span>
-<span id="cb32-1084"><a href="#cb32-1084" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1085"><a href="#cb32-1085" aria-hidden="true" tabindex="-1"></a><span class="fu">## Load and Aggregate 2018 Burglaries</span></span>
-<span id="cb32-1086"><a href="#cb32-1086" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1087"><a href="#cb32-1087" aria-hidden="true" tabindex="-1"></a>This block reads the 2018 crimes CSV, filters to burglary records with valid latitude and longitude, converts them to an sf point layer, reprojects to ESRI:102271, then spatially joins points to the existing 500 m grid and aggregates a per-cell count burglaries_2018. The result is a tidy table of 2018 burglary counts keyed by uniqueID.</span>
-<span id="cb32-1088"><a href="#cb32-1088" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1091"><a href="#cb32-1091" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb32-1092"><a href="#cb32-1092" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: load-2018-tailored</span></span>
-<span id="cb32-1093"><a href="#cb32-1093" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1094"><a href="#cb32-1094" aria-hidden="true" tabindex="-1"></a>bulgary2018 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;data/crime2018.csv&quot;</span>), <span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb32-1095"><a href="#cb32-1095" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Year <span class="sc">==</span> <span class="dv">2018</span>, <span class="sc">!</span><span class="fu">is.na</span>(Latitude), <span class="sc">!</span><span class="fu">is.na</span>(Longitude), </span>
-<span id="cb32-1096"><a href="#cb32-1096" aria-hidden="true" tabindex="-1"></a>         stringr<span class="sc">::</span><span class="fu">str_detect</span>(<span class="fu">toupper</span>(<span class="st">`</span><span class="at">Primary Type</span><span class="st">`</span>), <span class="st">&quot;BURGLARY&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb32-1097"><a href="#cb32-1097" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_as_sf</span>(<span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;Longitude&quot;</span>, <span class="st">&quot;Latitude&quot;</span>), <span class="at">crs =</span> <span class="dv">4326</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb32-1098"><a href="#cb32-1098" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_transform</span>(<span class="st">&#39;ESRI:102271&#39;</span>)</span>
-<span id="cb32-1099"><a href="#cb32-1099" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1100"><a href="#cb32-1100" aria-hidden="true" tabindex="-1"></a>burg_2018_fishnet <span class="ot">&lt;-</span> bulgary2018 <span class="sc">%&gt;%</span></span>
-<span id="cb32-1101"><a href="#cb32-1101" aria-hidden="true" tabindex="-1"></a>  sf<span class="sc">::</span><span class="fu">st_join</span>(fishnet, <span class="at">join =</span> sf<span class="sc">::</span>st_within) <span class="sc">%&gt;%</span></span>
-<span id="cb32-1102"><a href="#cb32-1102" aria-hidden="true" tabindex="-1"></a>  sf<span class="sc">::</span><span class="fu">st_drop_geometry</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb32-1103"><a href="#cb32-1103" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(uniqueID) <span class="sc">%&gt;%</span></span>
-<span id="cb32-1104"><a href="#cb32-1104" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">summarise</span>(<span class="at">burglaries_2018 =</span> dplyr<span class="sc">::</span><span class="fu">n</span>(), <span class="at">.groups =</span> <span class="st">&quot;drop&quot;</span>)</span>
-<span id="cb32-1105"><a href="#cb32-1105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1106"><a href="#cb32-1106" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb32-1107"><a href="#cb32-1107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1108"><a href="#cb32-1108" aria-hidden="true" tabindex="-1"></a><span class="fu">## Build Prediction Frame and Compute Temporal Metrics</span></span>
-<span id="cb32-1109"><a href="#cb32-1109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1110"><a href="#cb32-1110" aria-hidden="true" tabindex="-1"></a>This block attaches the 2018 counts to a copy of the fishnet (leaving the original intact), fills missing counts with zero, and constructs pred_frame_2018 with the same predictors used in 2017 (vacancy features and ACS controls), applying the same transformations (percent to proportion, log income). It then uses your previously selected chosen_model (Negative Binomial) to generate 2018 predictions, and computes overall MAE and RMSE plus by-district MAE and RMSE to quantify temporal generalization.</span>
-<span id="cb32-1111"><a href="#cb32-1111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1114"><a href="#cb32-1114" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb32-1115"><a href="#cb32-1115" aria-hidden="true" tabindex="-1"></a><span class="co"># keep your original fishnet intact; attach 2018 counts to a copy</span></span>
-<span id="cb32-1116"><a href="#cb32-1116" aria-hidden="true" tabindex="-1"></a>fishnet_2018 <span class="ot">&lt;-</span> fishnet <span class="sc">%&gt;%</span></span>
-<span id="cb32-1117"><a href="#cb32-1117" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">left_join</span>(burg_2018_fishnet, <span class="at">by =</span> <span class="st">&quot;uniqueID&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb32-1118"><a href="#cb32-1118" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">burglaries_2018 =</span> dplyr<span class="sc">::</span><span class="fu">coalesce</span>(burglaries_2018, <span class="dv">0</span>L))</span>
-<span id="cb32-1119"><a href="#cb32-1119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1120"><a href="#cb32-1120" aria-hidden="true" tabindex="-1"></a>pred_frame_2018 <span class="ot">&lt;-</span> fishnet_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb32-1121"><a href="#cb32-1121" aria-hidden="true" tabindex="-1"></a>  sf<span class="sc">::</span><span class="fu">st_drop_geometry</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb32-1122"><a href="#cb32-1122" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">transmute</span>(</span>
-<span id="cb32-1123"><a href="#cb32-1123" aria-hidden="true" tabindex="-1"></a>    uniqueID, District,</span>
-<span id="cb32-1124"><a href="#cb32-1124" aria-hidden="true" tabindex="-1"></a>    burglaries_2018,                  <span class="co"># 2018 DV for evaluation</span></span>
-<span id="cb32-1125"><a href="#cb32-1125" aria-hidden="true" tabindex="-1"></a>    abandoned_houses,</span>
-<span id="cb32-1126"><a href="#cb32-1126" aria-hidden="true" tabindex="-1"></a>    abandoned_houses.nn,</span>
-<span id="cb32-1127"><a href="#cb32-1127" aria-hidden="true" tabindex="-1"></a>    dist_to_hotspot,</span>
-<span id="cb32-1128"><a href="#cb32-1128" aria-hidden="true" tabindex="-1"></a>    pct_black, pct_hisp, pct_poverty, pct_renter,</span>
-<span id="cb32-1129"><a href="#cb32-1129" aria-hidden="true" tabindex="-1"></a>    med_income,</span>
-<span id="cb32-1130"><a href="#cb32-1130" aria-hidden="true" tabindex="-1"></a>    pct_45_64, pct_65_plus</span>
-<span id="cb32-1131"><a href="#cb32-1131" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb32-1132"><a href="#cb32-1132" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
-<span id="cb32-1133"><a href="#cb32-1133" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">across</span>(<span class="fu">c</span>(pct_black, pct_hisp, pct_poverty, pct_renter, pct_45_64, pct_65_plus), <span class="sc">~</span> .x<span class="sc">/</span><span class="dv">100</span>),</span>
-<span id="cb32-1134"><a href="#cb32-1134" aria-hidden="true" tabindex="-1"></a>    <span class="at">log_income =</span> <span class="fu">log</span>(<span class="fu">pmax</span>(med_income, <span class="dv">1</span>))</span>
-<span id="cb32-1135"><a href="#cb32-1135" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb32-1136"><a href="#cb32-1136" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">drop_na</span>()</span>
-<span id="cb32-1137"><a href="#cb32-1137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1138"><a href="#cb32-1138" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="fu">exists</span>(<span class="st">&quot;chosen_model&quot;</span>))</span>
-<span id="cb32-1139"><a href="#cb32-1139" aria-hidden="true" tabindex="-1"></a>pred_frame_2018 <span class="ot">&lt;-</span> pred_frame_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb32-1140"><a href="#cb32-1140" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">pred_2018_nb =</span> stats<span class="sc">::</span><span class="fu">predict</span>(chosen_model, <span class="at">newdata =</span> pred_frame_2018, <span class="at">type =</span> <span class="st">&quot;response&quot;</span>))</span>
-<span id="cb32-1141"><a href="#cb32-1141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1142"><a href="#cb32-1142" aria-hidden="true" tabindex="-1"></a>temporal_overall <span class="ot">&lt;-</span> pred_frame_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb32-1143"><a href="#cb32-1143" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">summarise</span>(</span>
-<span id="cb32-1144"><a href="#cb32-1144" aria-hidden="true" tabindex="-1"></a>    <span class="at">mae_nb  =</span> <span class="fu">mean</span>(<span class="fu">abs</span>(burglaries_2018 <span class="sc">-</span> pred_2018_nb)),</span>
-<span id="cb32-1145"><a href="#cb32-1145" aria-hidden="true" tabindex="-1"></a>    <span class="at">rmse_nb =</span> <span class="fu">sqrt</span>(<span class="fu">mean</span>((burglaries_2018 <span class="sc">-</span> pred_2018_nb)<span class="sc">^</span><span class="dv">2</span>))</span>
-<span id="cb32-1146"><a href="#cb32-1146" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb32-1147"><a href="#cb32-1147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1148"><a href="#cb32-1148" aria-hidden="true" tabindex="-1"></a>temporal_by_district <span class="ot">&lt;-</span> pred_frame_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb32-1149"><a href="#cb32-1149" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(District) <span class="sc">%&gt;%</span></span>
-<span id="cb32-1150"><a href="#cb32-1150" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">summarise</span>(</span>
-<span id="cb32-1151"><a href="#cb32-1151" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_cells =</span> dplyr<span class="sc">::</span><span class="fu">n</span>(),</span>
-<span id="cb32-1152"><a href="#cb32-1152" aria-hidden="true" tabindex="-1"></a>    <span class="at">mae_nb  =</span> <span class="fu">mean</span>(<span class="fu">abs</span>(burglaries_2018 <span class="sc">-</span> pred_2018_nb)),</span>
-<span id="cb32-1153"><a href="#cb32-1153" aria-hidden="true" tabindex="-1"></a>    <span class="at">rmse_nb =</span> <span class="fu">sqrt</span>(<span class="fu">mean</span>((burglaries_2018 <span class="sc">-</span> pred_2018_nb)<span class="sc">^</span><span class="dv">2</span>)),</span>
-<span id="cb32-1154"><a href="#cb32-1154" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">&quot;drop&quot;</span></span>
-<span id="cb32-1155"><a href="#cb32-1155" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb32-1156"><a href="#cb32-1156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1157"><a href="#cb32-1157" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(temporal_overall)</span>
-<span id="cb32-1158"><a href="#cb32-1158" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1159"><a href="#cb32-1159" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb32-1160"><a href="#cb32-1160" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1161"><a href="#cb32-1161" aria-hidden="true" tabindex="-1"></a><span class="fu">## Report Results and Compare to Spatial Cross-Validation</span></span>
-<span id="cb32-1162"><a href="#cb32-1162" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1163"><a href="#cb32-1163" aria-hidden="true" tabindex="-1"></a>This block prints a formatted table of the 2018 errors by district and a compact comparison table that lines up the 2017 spatial LOGO averages against the 2018 temporal metrics, so you can see at a glance whether the model transfers better across space or across time.</span>
-<span id="cb32-1164"><a href="#cb32-1164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1167"><a href="#cb32-1167" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb32-1168"><a href="#cb32-1168" aria-hidden="true" tabindex="-1"></a>temporal_by_district <span class="sc">%&gt;%</span></span>
-<span id="cb32-1169"><a href="#cb32-1169" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">arrange</span>(dplyr<span class="sc">::</span><span class="fu">desc</span>(mae_nb)) <span class="sc">%&gt;%</span></span>
-<span id="cb32-1170"><a href="#cb32-1170" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
-<span id="cb32-1171"><a href="#cb32-1171" aria-hidden="true" tabindex="-1"></a>    <span class="at">digits =</span> <span class="dv">3</span>,</span>
-<span id="cb32-1172"><a href="#cb32-1172" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">&quot;2018 Temporal Validation by District — NegBin (DV = Burglaries)&quot;</span>,</span>
-<span id="cb32-1173"><a href="#cb32-1173" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">&quot;District&quot;</span>, <span class="st">&quot;N cells&quot;</span>, <span class="st">&quot;MAE (NB)&quot;</span>, <span class="st">&quot;RMSE (NB)&quot;</span>),</span>
-<span id="cb32-1174"><a href="#cb32-1174" aria-hidden="true" tabindex="-1"></a>    <span class="at">booktabs =</span> <span class="cn">TRUE</span></span>
-<span id="cb32-1175"><a href="#cb32-1175" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb32-1176"><a href="#cb32-1176" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>,<span class="st">&quot;hover&quot;</span>), <span class="at">full_width =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb32-1080"><a href="#cb32-1080" aria-hidden="true" tabindex="-1"></a><span class="fu"># Temporal Validation on 2018 Burglaries</span></span>
+<span id="cb32-1081"><a href="#cb32-1081" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-1082"><a href="#cb32-1082" aria-hidden="true" tabindex="-1"></a>The prediction errors are unexpectedly large, and I was not able, within the scope of this assignment, to identify a convincing explanation. In some cells the model misses on the order of 15–20 burglaries, which is uncomfortably high. One might expect abandoned houses to be only a modest predictor—vacancy is relatively stationary and concentrated in disadvantaged, low-income neighborhoods—but even with that caveat, the deterioration in performance compared with earlier work using similar 2017 data is puzzling. My best guess is that the problem lies less in data coding and more in some combination of model specification choices, the way the training and prediction sets were constructed, and the limits of using 311 calls as a proxy for underlying risk. Because I am not confident that these results are substantively reliable, I treat this section primarily as a demonstration of workflow rather than as a basis for strong inference. The exercise shows how to build and compare spatial versus temporal prediction models.</span>
+<span id="cb32-1083"><a href="#cb32-1083" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-1084"><a href="#cb32-1084" aria-hidden="true" tabindex="-1"></a><span class="fu">## Load and Aggregate 2018 Burglaries</span></span>
+<span id="cb32-1085"><a href="#cb32-1085" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-1086"><a href="#cb32-1086" aria-hidden="true" tabindex="-1"></a>This block reads the 2018 crimes CSV, filters to burglary records with valid latitude and longitude, converts them to an sf point layer, reprojects to ESRI:102271, then spatially joins points to the existing 500 m grid and aggregates a per-cell count burglaries_2018. The result is a tidy table of 2018 burglary counts keyed by uniqueID.</span>
+<span id="cb32-1087"><a href="#cb32-1087" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-1090"><a href="#cb32-1090" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb32-1091"><a href="#cb32-1091" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: load-2018-tailored</span></span>
+<span id="cb32-1092"><a href="#cb32-1092" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-1093"><a href="#cb32-1093" aria-hidden="true" tabindex="-1"></a>bulgary2018 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;data/crime2018.csv&quot;</span>), <span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb32-1094"><a href="#cb32-1094" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Year <span class="sc">==</span> <span class="dv">2018</span>, <span class="sc">!</span><span class="fu">is.na</span>(Latitude), <span class="sc">!</span><span class="fu">is.na</span>(Longitude), </span>
+<span id="cb32-1095"><a href="#cb32-1095" aria-hidden="true" tabindex="-1"></a>         stringr<span class="sc">::</span><span class="fu">str_detect</span>(<span class="fu">toupper</span>(<span class="st">`</span><span class="at">Primary Type</span><span class="st">`</span>), <span class="st">&quot;BURGLARY&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb32-1096"><a href="#cb32-1096" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_as_sf</span>(<span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;Longitude&quot;</span>, <span class="st">&quot;Latitude&quot;</span>), <span class="at">crs =</span> <span class="dv">4326</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb32-1097"><a href="#cb32-1097" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_transform</span>(<span class="st">&#39;ESRI:102271&#39;</span>)</span>
+<span id="cb32-1098"><a href="#cb32-1098" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-1099"><a href="#cb32-1099" aria-hidden="true" tabindex="-1"></a>burg_2018_fishnet <span class="ot">&lt;-</span> bulgary2018 <span class="sc">%&gt;%</span></span>
+<span id="cb32-1100"><a href="#cb32-1100" aria-hidden="true" tabindex="-1"></a>  sf<span class="sc">::</span><span class="fu">st_join</span>(fishnet, <span class="at">join =</span> sf<span class="sc">::</span>st_within) <span class="sc">%&gt;%</span></span>
+<span id="cb32-1101"><a href="#cb32-1101" aria-hidden="true" tabindex="-1"></a>  sf<span class="sc">::</span><span class="fu">st_drop_geometry</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb32-1102"><a href="#cb32-1102" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(uniqueID) <span class="sc">%&gt;%</span></span>
+<span id="cb32-1103"><a href="#cb32-1103" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">summarise</span>(<span class="at">burglaries_2018 =</span> dplyr<span class="sc">::</span><span class="fu">n</span>(), <span class="at">.groups =</span> <span class="st">&quot;drop&quot;</span>)</span>
+<span id="cb32-1104"><a href="#cb32-1104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-1105"><a href="#cb32-1105" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb32-1106"><a href="#cb32-1106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-1107"><a href="#cb32-1107" aria-hidden="true" tabindex="-1"></a><span class="fu">## Build Prediction Frame and Compute Temporal Metrics</span></span>
+<span id="cb32-1108"><a href="#cb32-1108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-1109"><a href="#cb32-1109" aria-hidden="true" tabindex="-1"></a>This block attaches the 2018 counts to a copy of the fishnet (leaving the original intact), fills missing counts with zero, and constructs pred_frame_2018 with the same predictors used in 2017 (vacancy features and ACS controls), applying the same transformations (percent to proportion, log income). It then uses your previously selected chosen_model (Negative Binomial) to generate 2018 predictions, and computes overall MAE and RMSE plus by-district MAE and RMSE to quantify temporal generalization.</span>
+<span id="cb32-1110"><a href="#cb32-1110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-1113"><a href="#cb32-1113" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb32-1114"><a href="#cb32-1114" aria-hidden="true" tabindex="-1"></a><span class="co"># keep your original fishnet intact; attach 2018 counts to a copy</span></span>
+<span id="cb32-1115"><a href="#cb32-1115" aria-hidden="true" tabindex="-1"></a>fishnet_2018 <span class="ot">&lt;-</span> fishnet <span class="sc">%&gt;%</span></span>
+<span id="cb32-1116"><a href="#cb32-1116" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">left_join</span>(burg_2018_fishnet, <span class="at">by =</span> <span class="st">&quot;uniqueID&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb32-1117"><a href="#cb32-1117" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">burglaries_2018 =</span> dplyr<span class="sc">::</span><span class="fu">coalesce</span>(burglaries_2018, <span class="dv">0</span>L))</span>
+<span id="cb32-1118"><a href="#cb32-1118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-1119"><a href="#cb32-1119" aria-hidden="true" tabindex="-1"></a>pred_frame_2018 <span class="ot">&lt;-</span> fishnet_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb32-1120"><a href="#cb32-1120" aria-hidden="true" tabindex="-1"></a>  sf<span class="sc">::</span><span class="fu">st_drop_geometry</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb32-1121"><a href="#cb32-1121" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">transmute</span>(</span>
+<span id="cb32-1122"><a href="#cb32-1122" aria-hidden="true" tabindex="-1"></a>    uniqueID, District,</span>
+<span id="cb32-1123"><a href="#cb32-1123" aria-hidden="true" tabindex="-1"></a>    burglaries_2018,                  <span class="co"># 2018 DV for evaluation</span></span>
+<span id="cb32-1124"><a href="#cb32-1124" aria-hidden="true" tabindex="-1"></a>    abandoned_houses,</span>
+<span id="cb32-1125"><a href="#cb32-1125" aria-hidden="true" tabindex="-1"></a>    abandoned_houses.nn,</span>
+<span id="cb32-1126"><a href="#cb32-1126" aria-hidden="true" tabindex="-1"></a>    dist_to_hotspot,</span>
+<span id="cb32-1127"><a href="#cb32-1127" aria-hidden="true" tabindex="-1"></a>    pct_black, pct_hisp, pct_poverty, pct_renter,</span>
+<span id="cb32-1128"><a href="#cb32-1128" aria-hidden="true" tabindex="-1"></a>    med_income,</span>
+<span id="cb32-1129"><a href="#cb32-1129" aria-hidden="true" tabindex="-1"></a>    pct_45_64, pct_65_plus</span>
+<span id="cb32-1130"><a href="#cb32-1130" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb32-1131"><a href="#cb32-1131" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb32-1132"><a href="#cb32-1132" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">across</span>(<span class="fu">c</span>(pct_black, pct_hisp, pct_poverty, pct_renter, pct_45_64, pct_65_plus), <span class="sc">~</span> .x<span class="sc">/</span><span class="dv">100</span>),</span>
+<span id="cb32-1133"><a href="#cb32-1133" aria-hidden="true" tabindex="-1"></a>    <span class="at">log_income =</span> <span class="fu">log</span>(<span class="fu">pmax</span>(med_income, <span class="dv">1</span>))</span>
+<span id="cb32-1134"><a href="#cb32-1134" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb32-1135"><a href="#cb32-1135" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">drop_na</span>()</span>
+<span id="cb32-1136"><a href="#cb32-1136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-1137"><a href="#cb32-1137" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="fu">exists</span>(<span class="st">&quot;chosen_model&quot;</span>))</span>
+<span id="cb32-1138"><a href="#cb32-1138" aria-hidden="true" tabindex="-1"></a>pred_frame_2018 <span class="ot">&lt;-</span> pred_frame_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb32-1139"><a href="#cb32-1139" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">pred_2018_nb =</span> stats<span class="sc">::</span><span class="fu">predict</span>(chosen_model, <span class="at">newdata =</span> pred_frame_2018, <span class="at">type =</span> <span class="st">&quot;response&quot;</span>))</span>
+<span id="cb32-1140"><a href="#cb32-1140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-1141"><a href="#cb32-1141" aria-hidden="true" tabindex="-1"></a>temporal_overall <span class="ot">&lt;-</span> pred_frame_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb32-1142"><a href="#cb32-1142" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">summarise</span>(</span>
+<span id="cb32-1143"><a href="#cb32-1143" aria-hidden="true" tabindex="-1"></a>    <span class="at">mae_nb  =</span> <span class="fu">mean</span>(<span class="fu">abs</span>(burglaries_2018 <span class="sc">-</span> pred_2018_nb)),</span>
+<span id="cb32-1144"><a href="#cb32-1144" aria-hidden="true" tabindex="-1"></a>    <span class="at">rmse_nb =</span> <span class="fu">sqrt</span>(<span class="fu">mean</span>((burglaries_2018 <span class="sc">-</span> pred_2018_nb)<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb32-1145"><a href="#cb32-1145" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb32-1146"><a href="#cb32-1146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-1147"><a href="#cb32-1147" aria-hidden="true" tabindex="-1"></a>temporal_by_district <span class="ot">&lt;-</span> pred_frame_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb32-1148"><a href="#cb32-1148" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(District) <span class="sc">%&gt;%</span></span>
+<span id="cb32-1149"><a href="#cb32-1149" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">summarise</span>(</span>
+<span id="cb32-1150"><a href="#cb32-1150" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_cells =</span> dplyr<span class="sc">::</span><span class="fu">n</span>(),</span>
+<span id="cb32-1151"><a href="#cb32-1151" aria-hidden="true" tabindex="-1"></a>    <span class="at">mae_nb  =</span> <span class="fu">mean</span>(<span class="fu">abs</span>(burglaries_2018 <span class="sc">-</span> pred_2018_nb)),</span>
+<span id="cb32-1152"><a href="#cb32-1152" aria-hidden="true" tabindex="-1"></a>    <span class="at">rmse_nb =</span> <span class="fu">sqrt</span>(<span class="fu">mean</span>((burglaries_2018 <span class="sc">-</span> pred_2018_nb)<span class="sc">^</span><span class="dv">2</span>)),</span>
+<span id="cb32-1153"><a href="#cb32-1153" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">&quot;drop&quot;</span></span>
+<span id="cb32-1154"><a href="#cb32-1154" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb32-1155"><a href="#cb32-1155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-1156"><a href="#cb32-1156" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(temporal_overall)</span>
+<span id="cb32-1157"><a href="#cb32-1157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-1158"><a href="#cb32-1158" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb32-1159"><a href="#cb32-1159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-1160"><a href="#cb32-1160" aria-hidden="true" tabindex="-1"></a><span class="fu">## Report Results and Compare to Spatial Cross-Validation</span></span>
+<span id="cb32-1161"><a href="#cb32-1161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-1162"><a href="#cb32-1162" aria-hidden="true" tabindex="-1"></a>This block prints a formatted table of the 2018 errors by district and a compact comparison table that lines up the 2017 spatial LOGO averages against the 2018 temporal metrics, so you can see at a glance whether the model transfers better across space or across time.</span>
+<span id="cb32-1163"><a href="#cb32-1163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-1166"><a href="#cb32-1166" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb32-1167"><a href="#cb32-1167" aria-hidden="true" tabindex="-1"></a>temporal_by_district <span class="sc">%&gt;%</span></span>
+<span id="cb32-1168"><a href="#cb32-1168" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">arrange</span>(dplyr<span class="sc">::</span><span class="fu">desc</span>(mae_nb)) <span class="sc">%&gt;%</span></span>
+<span id="cb32-1169"><a href="#cb32-1169" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb32-1170"><a href="#cb32-1170" aria-hidden="true" tabindex="-1"></a>    <span class="at">digits =</span> <span class="dv">3</span>,</span>
+<span id="cb32-1171"><a href="#cb32-1171" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">&quot;2018 Temporal Validation by District — NegBin (DV = Burglaries)&quot;</span>,</span>
+<span id="cb32-1172"><a href="#cb32-1172" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">&quot;District&quot;</span>, <span class="st">&quot;N cells&quot;</span>, <span class="st">&quot;MAE (NB)&quot;</span>, <span class="st">&quot;RMSE (NB)&quot;</span>),</span>
+<span id="cb32-1173"><a href="#cb32-1173" aria-hidden="true" tabindex="-1"></a>    <span class="at">booktabs =</span> <span class="cn">TRUE</span></span>
+<span id="cb32-1174"><a href="#cb32-1174" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb32-1175"><a href="#cb32-1175" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>,<span class="st">&quot;hover&quot;</span>), <span class="at">full_width =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb32-1176"><a href="#cb32-1176" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-1177"><a href="#cb32-1177" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1178"><a href="#cb32-1178" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1179"><a href="#cb32-1179" aria-hidden="true" tabindex="-1"></a>compare_st <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
-<span id="cb32-1180"><a href="#cb32-1180" aria-hidden="true" tabindex="-1"></a>  <span class="at">validation =</span> <span class="fu">c</span>(<span class="st">&quot;Spatial LOGO (2017)&quot;</span>, <span class="st">&quot;Temporal (2018)&quot;</span>),</span>
-<span id="cb32-1181"><a href="#cb32-1181" aria-hidden="true" tabindex="-1"></a>  <span class="at">MAE  =</span> <span class="fu">c</span>(nb_mean_mae,  temporal_overall<span class="sc">$</span>mae_nb),</span>
-<span id="cb32-1182"><a href="#cb32-1182" aria-hidden="true" tabindex="-1"></a>  <span class="at">RMSE =</span> <span class="fu">c</span>(nb_mean_rmse, temporal_overall<span class="sc">$</span>rmse_nb)</span>
-<span id="cb32-1183"><a href="#cb32-1183" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb32-1184"><a href="#cb32-1184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1185"><a href="#cb32-1185" aria-hidden="true" tabindex="-1"></a>compare_st <span class="sc">%&gt;%</span></span>
-<span id="cb32-1186"><a href="#cb32-1186" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
-<span id="cb32-1187"><a href="#cb32-1187" aria-hidden="true" tabindex="-1"></a>    <span class="at">digits =</span> <span class="dv">3</span>,</span>
-<span id="cb32-1188"><a href="#cb32-1188" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">&quot;Spatial (2017 LOGO) vs Temporal (2018) — Negative Binomial&quot;</span></span>
-<span id="cb32-1189"><a href="#cb32-1189" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb32-1190"><a href="#cb32-1190" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>,<span class="st">&quot;hover&quot;</span>), <span class="at">full_width =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb32-1191"><a href="#cb32-1191" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1192"><a href="#cb32-1192" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb32-1193"><a href="#cb32-1193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1194"><a href="#cb32-1194" aria-hidden="true" tabindex="-1"></a><span class="fu">## Map Actuals, Predictions, and Errors</span></span>
-<span id="cb32-1195"><a href="#cb32-1195" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1196"><a href="#cb32-1196" aria-hidden="true" tabindex="-1"></a>This block builds three choropleths over the grid: actual 2018 burglary counts, the model’s 2018 predictions, and the error surface (actual minus predicted). Shown side by side, these maps help diagnose where the model under- or over-predicts when moved forward one year.</span>
-<span id="cb32-1197"><a href="#cb32-1197" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1200"><a href="#cb32-1200" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb32-1201"><a href="#cb32-1201" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: map-2018</span></span>
-<span id="cb32-1202"><a href="#cb32-1202" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 10</span></span>
-<span id="cb32-1203"><a href="#cb32-1203" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 8</span></span>
+<span id="cb32-1178"><a href="#cb32-1178" aria-hidden="true" tabindex="-1"></a>compare_st <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
+<span id="cb32-1179"><a href="#cb32-1179" aria-hidden="true" tabindex="-1"></a>  <span class="at">validation =</span> <span class="fu">c</span>(<span class="st">&quot;Spatial LOGO (2017)&quot;</span>, <span class="st">&quot;Temporal (2018)&quot;</span>),</span>
+<span id="cb32-1180"><a href="#cb32-1180" aria-hidden="true" tabindex="-1"></a>  <span class="at">MAE  =</span> <span class="fu">c</span>(nb_mean_mae,  temporal_overall<span class="sc">$</span>mae_nb),</span>
+<span id="cb32-1181"><a href="#cb32-1181" aria-hidden="true" tabindex="-1"></a>  <span class="at">RMSE =</span> <span class="fu">c</span>(nb_mean_rmse, temporal_overall<span class="sc">$</span>rmse_nb)</span>
+<span id="cb32-1182"><a href="#cb32-1182" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb32-1183"><a href="#cb32-1183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-1184"><a href="#cb32-1184" aria-hidden="true" tabindex="-1"></a>compare_st <span class="sc">%&gt;%</span></span>
+<span id="cb32-1185"><a href="#cb32-1185" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb32-1186"><a href="#cb32-1186" aria-hidden="true" tabindex="-1"></a>    <span class="at">digits =</span> <span class="dv">3</span>,</span>
+<span id="cb32-1187"><a href="#cb32-1187" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">&quot;Spatial (2017 LOGO) vs Temporal (2018) — Negative Binomial&quot;</span></span>
+<span id="cb32-1188"><a href="#cb32-1188" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb32-1189"><a href="#cb32-1189" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>,<span class="st">&quot;hover&quot;</span>), <span class="at">full_width =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb32-1190"><a href="#cb32-1190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-1191"><a href="#cb32-1191" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb32-1192"><a href="#cb32-1192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-1193"><a href="#cb32-1193" aria-hidden="true" tabindex="-1"></a><span class="fu">## Map Actuals, Predictions, and Errors</span></span>
+<span id="cb32-1194"><a href="#cb32-1194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-1195"><a href="#cb32-1195" aria-hidden="true" tabindex="-1"></a>This block builds three choropleths over the grid: actual 2018 burglary counts, the model’s 2018 predictions, and the error surface (actual minus predicted). Shown side by side, these maps help diagnose where the model under- or over-predicts when moved forward one year.</span>
+<span id="cb32-1196"><a href="#cb32-1196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-1199"><a href="#cb32-1199" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb32-1200"><a href="#cb32-1200" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: map-2018</span></span>
+<span id="cb32-1201"><a href="#cb32-1201" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 10</span></span>
+<span id="cb32-1202"><a href="#cb32-1202" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 8</span></span>
+<span id="cb32-1203"><a href="#cb32-1203" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-1204"><a href="#cb32-1204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1205"><a href="#cb32-1205" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1206"><a href="#cb32-1206" aria-hidden="true" tabindex="-1"></a>fishnet_2018_map <span class="ot">&lt;-</span> fishnet <span class="sc">%&gt;%</span></span>
-<span id="cb32-1207"><a href="#cb32-1207" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">left_join</span>(pred_frame_2018 <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(uniqueID, burglaries_2018, pred_2018_nb), <span class="at">by =</span> <span class="st">&quot;uniqueID&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb32-1208"><a href="#cb32-1208" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">error_2018_nb =</span> burglaries_2018 <span class="sc">-</span> pred_2018_nb)</span>
-<span id="cb32-1209"><a href="#cb32-1209" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1210"><a href="#cb32-1210" aria-hidden="true" tabindex="-1"></a>p_act <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb32-1211"><a href="#cb32-1211" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> fishnet_2018_map, <span class="fu">aes</span>(<span class="at">fill =</span> burglaries_2018), <span class="at">color =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
-<span id="cb32-1212"><a href="#cb32-1212" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">name =</span> <span class="st">&quot;Count&quot;</span>, <span class="at">option =</span> <span class="st">&quot;plasma&quot;</span>) <span class="sc">+</span></span>
-<span id="cb32-1213"><a href="#cb32-1213" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Actual Burglaries (2018)&quot;</span>) <span class="sc">+</span> <span class="fu">theme_crime</span>()</span>
-<span id="cb32-1214"><a href="#cb32-1214" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1215"><a href="#cb32-1215" aria-hidden="true" tabindex="-1"></a>p_pred <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb32-1216"><a href="#cb32-1216" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> fishnet_2018_map, <span class="fu">aes</span>(<span class="at">fill =</span> pred_2018_nb), <span class="at">color =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
-<span id="cb32-1217"><a href="#cb32-1217" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">name =</span> <span class="st">&quot;Predicted&quot;</span>, <span class="at">option =</span> <span class="st">&quot;plasma&quot;</span>) <span class="sc">+</span></span>
-<span id="cb32-1218"><a href="#cb32-1218" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Predicted Burglaries (2018, NegBin)&quot;</span>) <span class="sc">+</span> <span class="fu">theme_crime</span>()</span>
-<span id="cb32-1219"><a href="#cb32-1219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1220"><a href="#cb32-1220" aria-hidden="true" tabindex="-1"></a>p_err <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb32-1221"><a href="#cb32-1221" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> fishnet_2018_map, <span class="fu">aes</span>(<span class="at">fill =</span> error_2018_nb), <span class="at">color =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
-<span id="cb32-1222"><a href="#cb32-1222" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient2</span>(<span class="at">name =</span> <span class="st">&quot;Error&quot;</span>, <span class="at">low =</span> <span class="st">&quot;#2166ac&quot;</span>, <span class="at">mid =</span> <span class="st">&quot;white&quot;</span>, <span class="at">high =</span> <span class="st">&quot;#b2182b&quot;</span>, <span class="at">midpoint =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
-<span id="cb32-1223"><a href="#cb32-1223" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Prediction Error (Actual - Predicted, 2018)&quot;</span>) <span class="sc">+</span> <span class="fu">theme_crime</span>()</span>
-<span id="cb32-1224"><a href="#cb32-1224" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1225"><a href="#cb32-1225" aria-hidden="true" tabindex="-1"></a>p_act <span class="sc">+</span> p_pred <span class="sc">+</span> p_err <span class="sc">+</span> patchwork<span class="sc">::</span><span class="fu">plot_annotation</span>(<span class="at">title =</span> <span class="st">&quot;Temporal Validation — 2018&quot;</span>)</span>
-<span id="cb32-1226"><a href="#cb32-1226" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1227"><a href="#cb32-1227" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb32-1228"><a href="#cb32-1228" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-1229"><a href="#cb32-1229" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb32-1205"><a href="#cb32-1205" aria-hidden="true" tabindex="-1"></a>fishnet_2018_map <span class="ot">&lt;-</span> fishnet <span class="sc">%&gt;%</span></span>
+<span id="cb32-1206"><a href="#cb32-1206" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">left_join</span>(pred_frame_2018 <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(uniqueID, burglaries_2018, pred_2018_nb), <span class="at">by =</span> <span class="st">&quot;uniqueID&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb32-1207"><a href="#cb32-1207" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">error_2018_nb =</span> burglaries_2018 <span class="sc">-</span> pred_2018_nb)</span>
+<span id="cb32-1208"><a href="#cb32-1208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-1209"><a href="#cb32-1209" aria-hidden="true" tabindex="-1"></a>p_act <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb32-1210"><a href="#cb32-1210" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> fishnet_2018_map, <span class="fu">aes</span>(<span class="at">fill =</span> burglaries_2018), <span class="at">color =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
+<span id="cb32-1211"><a href="#cb32-1211" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">name =</span> <span class="st">&quot;Count&quot;</span>, <span class="at">option =</span> <span class="st">&quot;plasma&quot;</span>) <span class="sc">+</span></span>
+<span id="cb32-1212"><a href="#cb32-1212" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Actual Burglaries (2018)&quot;</span>) <span class="sc">+</span> <span class="fu">theme_crime</span>()</span>
+<span id="cb32-1213"><a href="#cb32-1213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-1214"><a href="#cb32-1214" aria-hidden="true" tabindex="-1"></a>p_pred <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb32-1215"><a href="#cb32-1215" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> fishnet_2018_map, <span class="fu">aes</span>(<span class="at">fill =</span> pred_2018_nb), <span class="at">color =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
+<span id="cb32-1216"><a href="#cb32-1216" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">name =</span> <span class="st">&quot;Predicted&quot;</span>, <span class="at">option =</span> <span class="st">&quot;plasma&quot;</span>) <span class="sc">+</span></span>
+<span id="cb32-1217"><a href="#cb32-1217" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Predicted Burglaries (2018, NegBin)&quot;</span>) <span class="sc">+</span> <span class="fu">theme_crime</span>()</span>
+<span id="cb32-1218"><a href="#cb32-1218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-1219"><a href="#cb32-1219" aria-hidden="true" tabindex="-1"></a>p_err <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb32-1220"><a href="#cb32-1220" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> fishnet_2018_map, <span class="fu">aes</span>(<span class="at">fill =</span> error_2018_nb), <span class="at">color =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
+<span id="cb32-1221"><a href="#cb32-1221" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient2</span>(<span class="at">name =</span> <span class="st">&quot;Error&quot;</span>, <span class="at">low =</span> <span class="st">&quot;#2166ac&quot;</span>, <span class="at">mid =</span> <span class="st">&quot;white&quot;</span>, <span class="at">high =</span> <span class="st">&quot;#b2182b&quot;</span>, <span class="at">midpoint =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb32-1222"><a href="#cb32-1222" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Prediction Error (Actual - Predicted, 2018)&quot;</span>) <span class="sc">+</span> <span class="fu">theme_crime</span>()</span>
+<span id="cb32-1223"><a href="#cb32-1223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-1224"><a href="#cb32-1224" aria-hidden="true" tabindex="-1"></a>p_act <span class="sc">+</span> p_pred <span class="sc">+</span> p_err <span class="sc">+</span> patchwork<span class="sc">::</span><span class="fu">plot_annotation</span>(<span class="at">title =</span> <span class="st">&quot;Temporal Validation — 2018&quot;</span>)</span>
+<span id="cb32-1225"><a href="#cb32-1225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-1226"><a href="#cb32-1226" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb32-1227"><a href="#cb32-1227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-1228"><a href="#cb32-1228" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
